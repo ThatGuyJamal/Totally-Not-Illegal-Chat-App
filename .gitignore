@@ -11,7 +11,7 @@ node_modules/
 # Environment variables
 .DS_Store
 
-dist/
+# dist/
 # build/
 
 # Ignore the config file (contains sensitive information such as tokens)
