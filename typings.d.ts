@@ -1,6 +1,6 @@
 import {
-	ApplicationCommandOption,
 	Client,
+	ApplicationCommandOption,
 	CommandInteraction,
 	Guild,
 	GuildMember,

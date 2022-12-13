@@ -930,19 +930,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discordjs/voice@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@discordjs/voice@npm:0.13.0"
-  dependencies:
-    "@types/ws": ^8.5.3
-    discord-api-types: ^0.37.12
-    prism-media: ^1.3.4
-    tslib: ^2.4.0
-    ws: ^8.9.0
-  checksum: 4d3da879cb58ba82a6f274e7fd9ffc3beb120f48e6aadf767afb4a3539e77f40d40cd62677aaec6e9eb3819f6d3c112837d6fb237388ed3708c79f1f2310b8bc
-  languageName: node
-  linkType: hard
-
 "@sapphire/async-queue@npm:^1.5.0":
   version: 1.5.0
   resolution: "@sapphire/async-queue@npm:1.5.0"
@@ -1034,7 +1021,6 @@ __metadata:
     dotenv: ^16.0.2
     mongoose: ^6.6.1
     npm-run-all: ^4.1.5
-    oceanic.js: ^1.3.2
     prettier: ^2.7.1
     tsc-watch: ^5.0.3
     typescript: ^4.8.4
@@ -1206,7 +1192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.12, discord-api-types@npm:^0.37.20":
+"discord-api-types@npm:^0.37.20":
   version: 0.37.22
   resolution: "discord-api-types@npm:0.37.22"
   checksum: 67110d877d8ba4a3f9ea6805b7c733f353ddfcbf85cc5f860fe57b906f7b59e1deb49419b10d3f499cfb76ddff8bfa668afdc6956dd57a33915ee70fc428a447
@@ -1844,20 +1830,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oceanic.js@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "oceanic.js@npm:1.3.2"
-  dependencies:
-    "@discordjs/voice": ^0.13.0
-    undici: ^5.12.0
-    ws: ^8.11.0
-  dependenciesMeta:
-    "@discordjs/voice":
-      optional: true
-  checksum: 973584fb69feec99fc4e0913324e1b3a944860fe84f78c3d1cbe8370458cb7274a991688a0e3de4cb610d0966425da4d97a19c1aeaee0dc3294a7efb70486d3a
-  languageName: node
-  linkType: hard
-
 "parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "parse-json@npm:4.0.0"
@@ -1936,27 +1908,6 @@ __metadata:
   bin:
     prettier: bin-prettier.js
   checksum: 4f21a0f1269f76fb36f54e9a8a1ea4c11e27478958bf860661fb4b6d7ac69aac1581f8724fa98ea3585e56d42a2ea317a17ff6e3324f40cb11ff9e20b73785cc
-  languageName: node
-  linkType: hard
-
-"prism-media@npm:^1.3.4":
-  version: 1.3.4
-  resolution: "prism-media@npm:1.3.4"
-  peerDependencies:
-    "@discordjs/opus": ^0.8.0
-    ffmpeg-static: ^5.0.2 || ^4.2.7 || ^3.0.0 || ^2.4.0
-    node-opus: ^0.3.3
-    opusscript: ^0.0.8
-  peerDependenciesMeta:
-    "@discordjs/opus":
-      optional: true
-    ffmpeg-static:
-      optional: true
-    node-opus:
-      optional: true
-    opusscript:
-      optional: true
-  checksum: 703be28c87b4694714a52a0ea84516b19d2e62e510d0f204efc074b044ad93dde00241d4b4741c25aa2e27a00e3b472e60ad0f6c94e88710f0827dc63889373a
   languageName: node
   linkType: hard
 
@@ -2379,7 +2330,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.4.1":
+"tslib@npm:^2.3.1, tslib@npm:^2.4.1":
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
   checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
@@ -2418,7 +2369,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.12.0, undici@npm:^5.13.0":
+"undici@npm:^5.13.0":
   version: 5.14.0
   resolution: "undici@npm:5.14.0"
   dependencies:
@@ -2505,7 +2456,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.11.0, ws@npm:^8.9.0":
+"ws@npm:^8.11.0":
   version: 8.11.0
   resolution: "ws@npm:8.11.0"
   peerDependencies:
