@@ -1,7 +1,7 @@
 {
   "name": "abyss-command-handler",
   "version": "1.0.0",
-  "main": "./dist/lib.js",
+  "main": "./dist/index.js",
   "typings": "./typings.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
