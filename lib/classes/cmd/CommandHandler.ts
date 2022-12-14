@@ -69,7 +69,9 @@ export default class CommandHandler {
     );
     const files = getAllFiles(this._commandsDir);
     const validations = [
-      ...this.getValidations(path.join(__dirname, "validations", "syntax")),
+      ...this.getValidations(
+        path.join(__dirname, "../../validations", "syntax")
+      ),
       ...this.getValidations(this._instance.validations?.syntax),
     ];
 

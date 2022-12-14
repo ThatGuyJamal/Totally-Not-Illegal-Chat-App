@@ -48,7 +48,7 @@ class CommandHandler {
         const defaultCommands = (0, get_all_files_1.default)(path_1.default.join(__dirname, "../../internal/commands"));
         const files = (0, get_all_files_1.default)(this._commandsDir);
         const validations = [
-            ...this.getValidations(path_1.default.join(__dirname, "validations", "syntax")),
+            ...this.getValidations(path_1.default.join(__dirname, "../../validations", "syntax")),
             ...this.getValidations(this._instance.validations?.syntax),
         ];
         for (let fileData of [...defaultCommands, ...files]) {
