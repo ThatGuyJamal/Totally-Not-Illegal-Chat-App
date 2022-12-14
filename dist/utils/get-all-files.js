@@ -19,9 +19,11 @@ const getAllFiles = (path, foldersOnly = false) => {
             }
             continue;
         }
-        const fileContents = require(filePath);
+        //
+        const fileContents = import(filePath).then((fileData) => fileData);
         filesFound.push({
             filePath,
+            // @ts-ignore - This is a hacky way to get the default export
             fileContents: fileContents?.default || fileContents,
         });
     }
