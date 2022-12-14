@@ -1,7 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = require("mongoose");
-const requiredPermissionsSchema = new mongoose_1.Schema({
+import pkg from "mongoose";
+const { Schema, model, models } = pkg;
+const requiredPermissionsSchema = new Schema({
     // guildId-commandName
     _id: {
         type: String,
@@ -13,5 +12,4 @@ const requiredPermissionsSchema = new mongoose_1.Schema({
     },
 });
 const name = "required-permissions";
-exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, requiredPermissionsSchema);
-//# sourceMappingURL=required-permissions-schema.js.map
+export default models[name] || model(name, requiredPermissionsSchema);

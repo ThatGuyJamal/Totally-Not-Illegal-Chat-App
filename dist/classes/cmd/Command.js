@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Command {
+export default class Command {
     _instance;
     _commandName;
     _commandObject;
@@ -19,5 +17,3 @@ class Command {
         return this._commandObject;
     }
 }
-exports.default = Command;
-//# sourceMappingURL=Command.js.map

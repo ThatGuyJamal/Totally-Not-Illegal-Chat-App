@@ -1,6 +1,6 @@
 import { AutocompleteInteraction } from "discord.js";
 
-import ACH from "../../../../main";
+import ACH from "../../../../main.js";
 
 export default async (interaction: AutocompleteInteraction, instance: ACH) => {
   const { commandHandler } = instance;

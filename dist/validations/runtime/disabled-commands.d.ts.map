@@ -1,1 +1,1 @@
-{"version":3,"file":"disabled-commands.d.ts","sourceRoot":"","sources":["../../../lib/validations/runtime/disabled-commands.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,eAAe,CAAC;AAC7C,OAAO,OAAO,MAAM,2BAA2B,CAAC;kCAEjB,OAAO,SAAS,YAAY;AAA3D,wBAoBE"}
+{"version":3,"file":"disabled-commands.d.ts","sourceRoot":"","sources":["../../../lib/validations/runtime/disabled-commands.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,wBAAwB,CAAC;AACtD,OAAO,OAAO,MAAM,8BAA8B,CAAC;kCAEpB,OAAO,SAAS,YAAY;AAA3D,wBAoBE"}

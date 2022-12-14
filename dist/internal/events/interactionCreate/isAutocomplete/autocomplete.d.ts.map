@@ -1,1 +1,1 @@
-{"version":3,"file":"autocomplete.d.ts","sourceRoot":"","sources":["../../../../../lib/internal/events/interactionCreate/isAutocomplete/autocomplete.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,uBAAuB,EAAE,MAAM,YAAY,CAAC;AAErD,OAAO,GAAG,MAAM,kBAAkB,CAAC;sCAEA,uBAAuB,YAAY,GAAG;AAAzE,wBA+BE"}
+{"version":3,"file":"autocomplete.d.ts","sourceRoot":"","sources":["../../../../../lib/internal/events/interactionCreate/isAutocomplete/autocomplete.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,uBAAuB,EAAE,MAAM,YAAY,CAAC;AAErD,OAAO,GAAG,MAAM,qBAAqB,CAAC;sCAEH,uBAAuB,YAAY,GAAG;AAAzE,wBA+BE"}

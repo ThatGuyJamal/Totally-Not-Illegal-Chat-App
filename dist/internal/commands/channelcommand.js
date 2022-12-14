@@ -1,24 +1,22 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const discord_js_1 = require("discord.js");
-const typings_1 = require("../../typings");
-exports.default = {
+import { ApplicationCommandOptionType } from "discord.js";
+import { CommandType, } from "../../typings/index.js";
+export default {
     description: "Specifies what commands can be ran inside of what channels",
-    type: typings_1.CommandType.SLASH,
+    type: CommandType.SLASH,
     guildOnly: true,
     options: [
         {
             name: "command",
             description: "The command to restrict to specific channels",
             required: true,
-            type: discord_js_1.ApplicationCommandOptionType.String,
+            type: ApplicationCommandOptionType.String,
             autocomplete: true,
         },
         {
             name: "channel",
             description: "The channel to use for this command",
             required: true,
-            type: discord_js_1.ApplicationCommandOptionType.Channel,
+            type: ApplicationCommandOptionType.Channel,
         },
     ],
     autocomplete: (command) => {
@@ -66,4 +64,3 @@ exports.default = {
         };
     },
 };
-//# sourceMappingURL=channelcommand.js.map

@@ -1,28 +1,23 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const discord_js_1 = require("discord.js");
-const required_roles_schema_1 = __importDefault(require("../../models/required-roles-schema"));
-const typings_1 = require("../../typings");
-exports.default = {
+import { PermissionFlagsBits, ApplicationCommandOptionType } from "discord.js";
+import requiredroles from "../../models/required-roles-schema";
+import { CommandType, } from "../../typings/index.js";
+export default {
     description: "Sets what commands require what roles",
-    type: typings_1.CommandType.SLASH,
+    type: CommandType.SLASH,
     guildOnly: true,
-    roles: [discord_js_1.PermissionFlagsBits.Administrator],
+    roles: [PermissionFlagsBits.Administrator],
     options: [
         {
             name: "command",
             description: "The command to set roles to",
-            type: discord_js_1.ApplicationCommandOptionType.String,
+            type: ApplicationCommandOptionType.String,
             required: true,
             autocomplete: true,
         },
         {
             name: "role",
             description: "The role to set for the command",
-            type: discord_js_1.ApplicationCommandOptionType.Role,
+            type: ApplicationCommandOptionType.Role,
             required: false,
         },
     ],
@@ -47,7 +42,7 @@ exports.default = {
         }
         const _id = `${guild.id}-${command.commandName}`;
         if (!role) {
-            const document = await required_roles_schema_1.default.findById(_id);
+            const document = await requiredroles.findById(_id);
             const roles = document && document.roles?.length
                 ? document.roles.map((roleId) => `<@&${roleId}>`)
                 : "None.";
@@ -59,14 +54,14 @@ exports.default = {
                 },
             };
         }
-        const alreadyExists = await required_roles_schema_1.default.findOne({
+        const alreadyExists = await requiredroles.findOne({
             _id,
             roles: {
                 $in: [role],
             },
         });
         if (alreadyExists) {
-            await required_roles_schema_1.default.findOneAndUpdate({
+            await requiredroles.findOneAndUpdate({
                 _id,
             }, {
                 _id,
@@ -82,7 +77,7 @@ exports.default = {
                 },
             };
         }
-        await required_roles_schema_1.default.findOneAndUpdate({
+        await requiredroles.findOneAndUpdate({
             _id,
         }, {
             _id,
@@ -101,4 +96,3 @@ exports.default = {
         };
     },
 };
-//# sourceMappingURL=requiredroles.js.map

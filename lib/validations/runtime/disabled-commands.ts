@@ -1,5 +1,5 @@
-import { CommandUsage } from "../../typings";
-import Command from "../../classes/cmd/Command";
+import { CommandUsage } from "../../typings/index.js";
+import Command from "../../classes/cmd/Command.js";
 
 export default async (command: Command, usage: CommandUsage) => {
   const { commandName, instance } = command;

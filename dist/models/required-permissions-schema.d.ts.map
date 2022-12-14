@@ -1,1 +1,1 @@
-{"version":3,"file":"required-permissions-schema.d.ts","sourceRoot":"","sources":["../../lib/models/required-permissions-schema.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;AAeA,wBAAsE"}
+{"version":3,"file":"required-permissions-schema.d.ts","sourceRoot":"","sources":["../../lib/models/required-permissions-schema.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,UAAU,CAAC;;AAgB3B,wBAAsE"}

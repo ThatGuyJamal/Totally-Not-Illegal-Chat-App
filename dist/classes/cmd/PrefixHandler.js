@@ -1,13 +1,8 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const guild_prefix_schema_1 = __importDefault(require("../../models/guild-prefix-schema"));
-const discord_js_1 = require("discord.js");
-class PrefixHandler {
+import guildPrefixSchema from "../../models/guild-prefix-schema.js";
+import { Collection } from "discord.js";
+export default class PrefixHandler {
     // <guildId: prefix>
-    _prefixes = new discord_js_1.Collection();
+    _prefixes = new Collection();
     _defaultPrefix;
     _instance;
     constructor(instance) {
@@ -23,7 +18,7 @@ class PrefixHandler {
         if (!this._instance.isConnectedToDB) {
             return;
         }
-        const results = await guild_prefix_schema_1.default.find({});
+        const results = await guildPrefixSchema.find({});
         for (const result of results) {
             this._prefixes.set(result._id, result.prefix);
         }
@@ -46,7 +41,7 @@ class PrefixHandler {
             return;
         }
         this._prefixes.set(guildId, prefix);
-        await guild_prefix_schema_1.default
+        await guildPrefixSchema
             .findOneAndUpdate({
             _id: guildId,
         }, {
@@ -58,5 +53,3 @@ class PrefixHandler {
             .exec();
     }
 }
-exports.default = PrefixHandler;
-//# sourceMappingURL=PrefixHandler.js.map

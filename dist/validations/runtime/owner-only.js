@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = (command, usage) => {
+export default (command, usage) => {
     const { instance, commandObject } = command;
     const { botOwners } = instance;
     const { ownerOnly } = commandObject;
@@ -10,4 +8,3 @@ exports.default = (command, usage) => {
     }
     return true;
 };
-//# sourceMappingURL=owner-only.js.map

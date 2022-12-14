@@ -1,13 +1,8 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
-const CommandHandler_1 = __importDefault(require("./classes/cmd/CommandHandler"));
-const EventHandler_1 = __importDefault(require("./classes/event/EventHandler"));
-const Features_1 = __importDefault(require("./classes/util/Features"));
-const Cooldowns_1 = require("./classes/util/Cooldowns");
+import mongoose from "mongoose";
+import CommandHandler from "./classes/cmd/CommandHandler.js";
+import EventHandler from "./classes/event/EventHandler.js";
+import FeaturesHandler from "./classes/util/Features.js";
+import { Cooldowns } from "./classes/util/Cooldowns.js";
 // The prefix used if non is passed
 const noPrefixValue = "??";
 /**
@@ -15,7 +10,7 @@ const noPrefixValue = "??";
  * @version 1.0.0
  * @description The main class for Abyss Command Handler.
  */
-class AbyssCommandHandler {
+export default class AbyssCommandHandler {
     _client;
     _testServers;
     _botOwners;
@@ -51,25 +46,25 @@ class AbyssCommandHandler {
         this._botOwners = botOwners;
         this._disabledDefaultCommands = disabledDefaultCommands;
         this._validations = validations;
-        this._cooldowns = new Cooldowns_1.Cooldowns(this, {
+        this._cooldowns = new Cooldowns(this, {
             errorMessage: "Please wait {TIME} before doing that again.",
             botOwnersBypass: false,
             dbRequired: 300,
             ...cooldownConfig,
         });
         if (commandsDir) {
-            this._commandHandler = new CommandHandler_1.default(this, commandsDir, client);
+            this._commandHandler = new CommandHandler(this, commandsDir, client);
         }
         if (featuresDir) {
-            new Features_1.default(this, featuresDir, client);
+            new FeaturesHandler(this, featuresDir, client);
         }
-        this._eventHandler = new EventHandler_1.default(this, events, client);
+        this._eventHandler = new EventHandler(this, events, client);
     }
     /**
      * @param mongoUri The MongoDB connection URI
      */
     async connectToMongo(mongoUri) {
-        await mongoose_1.default.connect(mongoUri, {
+        await mongoose.connect(mongoUri, {
             keepAlive: true,
         });
         this._isConnectedToDB = true;
@@ -102,5 +97,3 @@ class AbyssCommandHandler {
         return this._validations;
     }
 }
-exports.default = AbyssCommandHandler;
-//# sourceMappingURL=main.js.map

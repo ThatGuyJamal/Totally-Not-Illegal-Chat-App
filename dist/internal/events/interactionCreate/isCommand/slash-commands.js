@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = async (interaction, instance) => {
+export default async (interaction, instance) => {
     const { commandHandler } = instance;
     if (!commandHandler)
         return;
@@ -28,4 +26,3 @@ exports.default = async (interaction, instance) => {
         interaction.reply(response).catch(() => { });
     }
 };
-//# sourceMappingURL=slash-commands.js.map

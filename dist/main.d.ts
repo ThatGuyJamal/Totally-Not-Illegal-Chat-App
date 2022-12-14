@@ -1,8 +1,8 @@
 import type { Client } from "discord.js";
-import CommandHandler from "./classes/cmd/CommandHandler";
-import EventHandler from "./classes/event/EventHandler";
-import { Cooldowns } from "./classes/util/Cooldowns";
-import { DefaultCommands, Validations, ClientOptions } from "./typings";
+import CommandHandler from "./classes/cmd/CommandHandler.js";
+import EventHandler from "./classes/event/EventHandler.js";
+import { Cooldowns } from "./classes/util/Cooldowns.js";
+import { DefaultCommands, Validations, ClientOptions } from "./typings/index.js";
 /**
  * @class
  * @version 1.0.0

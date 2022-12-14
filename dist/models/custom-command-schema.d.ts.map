@@ -1,1 +1,1 @@
-{"version":3,"file":"custom-command-schema.d.ts","sourceRoot":"","sources":["../../lib/models/custom-command-schema.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;AAeA,wBAAgE"}
+{"version":3,"file":"custom-command-schema.d.ts","sourceRoot":"","sources":["../../lib/models/custom-command-schema.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,UAAU,CAAC;;AAgB3B,wBAAgE"}

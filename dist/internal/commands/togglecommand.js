@@ -1,17 +1,15 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const typings_1 = require("../../typings");
-const discord_js_1 = require("discord.js");
-exports.default = {
+import { PermissionFlagsBits, ApplicationCommandOptionType } from "discord.js";
+import { CommandType } from "../../typings/index.js";
+export default {
     description: "Toggles a command on or off for your server",
-    type: typings_1.CommandType.SLASH,
+    type: CommandType.SLASH,
     guildOnly: true,
-    permissions: [discord_js_1.PermissionFlagsBits.Administrator],
+    permissions: [PermissionFlagsBits.Administrator],
     options: [
         {
             name: "command",
             description: "The command to toggle on or off",
-            type: discord_js_1.ApplicationCommandOptionType.String,
+            type: ApplicationCommandOptionType.String,
             required: true,
             autocomplete: true,
         },
@@ -51,4 +49,3 @@ exports.default = {
         }
     },
 };
-//# sourceMappingURL=togglecommand.js.map

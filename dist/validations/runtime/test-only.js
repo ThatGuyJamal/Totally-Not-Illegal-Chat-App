@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = (command, usage) => {
+export default (command, usage) => {
     const { instance, commandObject } = command;
     const { guild } = usage;
     if (commandObject.testOnly !== true) {
@@ -8,4 +6,3 @@ exports.default = (command, usage) => {
     }
     return instance.testServers.includes(guild?.id || "");
 };
-//# sourceMappingURL=test-only.js.map

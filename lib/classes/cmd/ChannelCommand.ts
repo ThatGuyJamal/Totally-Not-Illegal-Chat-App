@@ -1,6 +1,6 @@
 import { Collection } from "discord.js";
-import ACH from "../../main";
-import channelCommands from "../../models/channel-commands-schema";
+import ACH from "../../main.js";
+import channelCommands from "../../models/channel-commands-schema.js";
 
 class ChannelCommands {
   // `${guildId}-${commandName}`: [channelIds]

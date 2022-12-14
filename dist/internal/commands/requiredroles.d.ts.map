@@ -1,1 +1,1 @@
-{"version":3,"file":"requiredroles.d.ts","sourceRoot":"","sources":["../../../lib/internal/commands/requiredroles.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,aAAa,EAA6B,MAAM,eAAe,CAAC;;AAGzE,wBAwHmB"}
+{"version":3,"file":"requiredroles.d.ts","sourceRoot":"","sources":["../../../lib/internal/commands/requiredroles.ts"],"names":[],"mappings":"AAGA,OAAO,EACL,aAAa,EAGd,MAAM,wBAAwB,CAAC;;AAGhC,wBAwHmB"}

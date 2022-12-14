@@ -1,22 +1,17 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const get_all_files_1 = __importDefault(require("../../utils/get-all-files"));
-const Command_1 = __importDefault(require("./Command"));
-const SlashCommand_1 = __importDefault(require("./SlashCommand"));
-const ChannelCommand_1 = __importDefault(require("./ChannelCommand"));
-const CustomCommand_1 = __importDefault(require("./CustomCommand"));
-const DisabledCommands_1 = __importDefault(require("./DisabledCommands"));
-const PrefixHandler_1 = __importDefault(require("./PrefixHandler"));
-const discord_js_1 = require("discord.js");
-const node_path_1 = __importDefault(require("node:path"));
-const typings_1 = require("../../typings");
-class CommandHandler {
+import getAllFiles from "../../utils/get-all-files.js";
+import Command from "./Command.js";
+import SlashCommands from "./SlashCommand.js";
+import ChannelCommands from "./ChannelCommand.js";
+import CustomCommands from "./CustomCommand.js";
+import DisabledCommands from "./DisabledCommands.js";
+import PrefixHandler from "./PrefixHandler.js";
+import { Collection, } from "discord.js";
+import path from "node:path";
+import { DefaultCommands, CommandType, } from "../../typings/index.js";
+export default class CommandHandler {
     // <commandName, instance of the Command class>
-    _commands = new discord_js_1.Collection();
-    _validations = this.getValidations(node_path_1.default.join(__dirname, "../../validations", "runtime"));
+    _commands = new Collection();
+    _validations = this.getValidations(path.join(__dirname, "../../validations", "runtime"));
     _instance;
     _client;
     _commandsDir;
@@ -28,12 +23,12 @@ class CommandHandler {
     constructor(instance, commandsDir, client) {
         this._instance = instance;
         this._commandsDir = commandsDir;
-        this._slashCommands = new SlashCommand_1.default(client);
+        this._slashCommands = new SlashCommands(client);
         this._client = client;
-        this._channelCommands = new ChannelCommand_1.default(instance);
-        this._customCommands = new CustomCommand_1.default(instance, this);
-        this._disabledCommands = new DisabledCommands_1.default(instance);
-        this._prefixes = new PrefixHandler_1.default(instance);
+        this._channelCommands = new ChannelCommands(instance);
+        this._customCommands = new CustomCommands(instance, this);
+        this._disabledCommands = new DisabledCommands(instance);
+        this._prefixes = new PrefixHandler(instance);
         this._validations = [
             ...this._validations,
             ...this.getValidations(instance.validations?.runtime),
@@ -41,10 +36,10 @@ class CommandHandler {
         this.readFiles();
     }
     async readFiles() {
-        const defaultCommands = (0, get_all_files_1.default)(node_path_1.default.join(__dirname, "../../internal/commands"));
-        const files = (0, get_all_files_1.default)(this._commandsDir);
+        const defaultCommands = getAllFiles(path.join(__dirname, "../../internal/commands"));
+        const files = getAllFiles(this._commandsDir);
         const validations = [
-            ...this.getValidations(node_path_1.default.join(__dirname, "../../validations", "syntax")),
+            ...this.getValidations(path.join(__dirname, "../../validations", "syntax")),
             ...this.getValidations(this._instance.validations?.syntax),
         ];
         for (let fileData of [...defaultCommands, ...files]) {
@@ -53,13 +48,13 @@ class CommandHandler {
             const split = filePath.split(/[\/\\]/);
             let commandName = split.pop();
             commandName = commandName.split(".")[0];
-            const command = new Command_1.default(this._instance, commandName, commandObject);
+            const command = new Command(this._instance, commandName, commandObject);
             const { description, type, testOnly, delete: del, aliases = [], init = () => { }, } = commandObject;
             let defaultCommandValue;
-            for (const [key, value] of Object.entries(typings_1.DefaultCommands)) {
+            for (const [key, value] of Object.entries(DefaultCommands)) {
                 if (value === commandName.toLowerCase()) {
                     defaultCommandValue =
-                        typings_1.DefaultCommands[key];
+                        DefaultCommands[key];
                     break;
                 }
             }
@@ -102,7 +97,7 @@ class CommandHandler {
     }
     async runCommand(command, args, message, interaction) {
         const { callback, type, cooldowns } = command.commandObject;
-        if (message && type === typings_1.CommandType.SLASH) {
+        if (message && type === CommandType.SLASH) {
             return;
         }
         const guild = message ? message.guild : interaction?.guild;
@@ -153,7 +148,7 @@ class CommandHandler {
         if (!folder) {
             return [];
         }
-        return (0, get_all_files_1.default)(folder).map((fileData) => fileData.fileContents);
+        return getAllFiles(folder).map((fileData) => fileData.fileContents);
     }
     get commands() {
         return this._commands;
@@ -174,5 +169,3 @@ class CommandHandler {
         return this._prefixes;
     }
 }
-exports.default = CommandHandler;
-//# sourceMappingURL=CommandHandler.js.map

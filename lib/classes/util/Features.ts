@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
-import getAllFiles from "../../utils/get-all-files";
-import ACH from "../../main";
+import getAllFiles from "../../utils/get-all-files.js";
+import ACH from "../../main.js";
 
 export default class FeaturesHandler {
   constructor(instance: ACH, featuresDir: string, client: Client) {

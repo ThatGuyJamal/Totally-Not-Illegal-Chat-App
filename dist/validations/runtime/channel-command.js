@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = async (command, usage) => {
+export default async (command, usage) => {
     const { commandName, instance } = command;
     const { guild, channel, message, interaction } = usage;
     if (!guild || !instance.isConnectedToDB) {
@@ -18,4 +16,3 @@ exports.default = async (command, usage) => {
     }
     return true;
 };
-//# sourceMappingURL=channel-command.js.map

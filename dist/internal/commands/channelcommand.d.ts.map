@@ -1,1 +1,1 @@
-{"version":3,"file":"channelcommand.d.ts","sourceRoot":"","sources":["../../../lib/internal/commands/channelcommand.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,aAAa,EAA6B,MAAM,eAAe,CAAC;;AAEzE,wBAyFmB"}
+{"version":3,"file":"channelcommand.d.ts","sourceRoot":"","sources":["../../../lib/internal/commands/channelcommand.ts"],"names":[],"mappings":"AAGA,OAAO,EACL,aAAa,EAGd,MAAM,wBAAwB,CAAC;;AAEhC,wBAyFmB"}

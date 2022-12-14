@@ -1,6 +1,6 @@
 import { CommandInteraction, Message } from "discord.js";
-import CommandHandler from "./CommandHandler";
-import ACH from "../../main";
+import CommandHandler from "./CommandHandler.js";
+import ACH from "../../main.js";
 export default class CustomCommands {
     _customCommands: Map<any, any>;
     private _commandHandler;

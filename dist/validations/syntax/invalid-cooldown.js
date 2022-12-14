@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = (command) => {
+export default (command) => {
     const { commandObject, commandName } = command;
     const { cooldowns } = commandObject;
     if (!cooldowns) {
@@ -10,4 +8,3 @@ exports.default = (command) => {
         throw new Error(`Invalid cooldown for command "${commandName}". It must have a "type" and "duration" property.`);
     }
 };
-//# sourceMappingURL=invalid-cooldown.js.map

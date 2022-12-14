@@ -9,7 +9,7 @@ import {
   User,
   Message,
 } from "discord.js";
-import AbyssCommandHandler from "../main";
+import AbyssCommandHandler from "../main.js";
 
 /**
  * @class

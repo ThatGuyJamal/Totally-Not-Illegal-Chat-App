@@ -1,10 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const custom_command_schema_1 = __importDefault(require("../../models/custom-command-schema"));
-class CustomCommands {
+import customCommandSchema from "../../models/custom-command-schema.js";
+export default class CustomCommands {
     // guildId-commandName: response
     _customCommands = new Map();
     _commandHandler;
@@ -18,7 +13,7 @@ class CustomCommands {
         if (!this._instance.isConnectedToDB) {
             return;
         }
-        const results = await custom_command_schema_1.default.find({});
+        const results = await customCommandSchema.find({});
         for (const result of results) {
             const { _id, response } = result;
             this._customCommands.set(_id, response);
@@ -41,7 +36,7 @@ class CustomCommands {
         const _id = `${guildId}-${commandName}`;
         this._customCommands.set(_id, response);
         this._commandHandler.slashCommands.create(commandName, description, [], guildId);
-        await custom_command_schema_1.default.findOneAndUpdate({
+        await customCommandSchema.findOneAndUpdate({
             _id,
         }, {
             _id,
@@ -57,7 +52,7 @@ class CustomCommands {
         const _id = `${guildId}-${commandName}`;
         this._customCommands.delete(_id);
         this._commandHandler.slashCommands.delete(commandName, guildId);
-        await custom_command_schema_1.default.deleteOne({ _id });
+        await customCommandSchema.deleteOne({ _id });
     }
     async run(commandName, message, interaction) {
         if (!message && !interaction) {
@@ -78,5 +73,3 @@ class CustomCommands {
             interaction.reply(response).catch(() => { });
     }
 }
-exports.default = CustomCommands;
-//# sourceMappingURL=CustomCommand.js.map

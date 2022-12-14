@@ -1,6 +1,6 @@
 import { Collection } from "discord.js";
-import { CooldownConfig, CooldownTypes, InternalCooldownConfig } from "../../typings";
-import ACH from "../../main";
+import { CooldownConfig, CooldownTypes, InternalCooldownConfig } from "../../typings/index.js";
+import ACH from "../../main.js";
 export declare class Cooldowns {
     _cooldowns: Collection<string, Date>;
     _instance: ACH;

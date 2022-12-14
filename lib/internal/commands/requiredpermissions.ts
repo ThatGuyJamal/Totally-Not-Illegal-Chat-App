@@ -1,8 +1,12 @@
 import { PermissionFlagsBits, ApplicationCommandOptionType } from "discord.js";
 
 import requiredPermissions from "../../models/required-permissions-schema";
-import { CommandObject, CommandType, CommandUsage } from "../../typings";
-import Command from "../../classes/cmd/Command";
+import {
+  CommandObject,
+  CommandType,
+  CommandUsage,
+} from "../../typings/index.js";
+import Command from "../../classes/cmd/Command.js";
 
 const clearAllPermissions = "Clear All Permissions";
 

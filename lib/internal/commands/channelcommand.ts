@@ -1,7 +1,11 @@
 import { ApplicationCommandOptionType, CommandInteraction } from "discord.js";
 
-import Command from "../../classes/cmd/Command";
-import { CommandObject, CommandType, CommandUsage } from "../../typings";
+import Command from "../../classes/cmd/Command.js";
+import {
+  CommandObject,
+  CommandType,
+  CommandUsage,
+} from "../../typings/index.js";
 
 export default {
   description: "Specifies what commands can be ran inside of what channels",

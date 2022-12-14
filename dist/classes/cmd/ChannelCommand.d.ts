@@ -1,5 +1,5 @@
 import { Collection } from "discord.js";
-import ACH from "../../main";
+import ACH from "../../main.js";
 declare class ChannelCommands {
     _channelCommands: Collection<string, string[]>;
     private _instance;

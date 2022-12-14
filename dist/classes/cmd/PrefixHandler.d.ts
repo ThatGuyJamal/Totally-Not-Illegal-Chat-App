@@ -1,5 +1,5 @@
 import { Collection } from "discord.js";
-import ACH from "../../main";
+import ACH from "../../main.js";
 export default class PrefixHandler {
     _prefixes: Collection<string, string>;
     private _defaultPrefix;

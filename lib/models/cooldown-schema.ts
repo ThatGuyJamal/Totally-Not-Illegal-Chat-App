@@ -1,4 +1,5 @@
-import { Schema, model, models } from "mongoose";
+import pkg from "mongoose";
+const { Schema, model, models } = pkg;
 
 const cooldownSchema = new Schema({
   // The key from Cooldowns.getKey()

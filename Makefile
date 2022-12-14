@@ -15,9 +15,36 @@ pre_deploy:
 		@echo Starting...
 
 		@rmdir dist /s /q
+		@echo Deleted dist folder...
+
 		@yarn format
+		@echo Formatted project...
+
 		@yarn build
+		@echo Built project...
+
 		@node ./dist/index.js
+		@echo Ran project...
+
+		@echo "Done!"
+		@echo ---------------------------------------------
+
+# updates all project dependencies
+update_all_deps:
+		@echo ---------------------------------------------
+		@echo Starting...
+
+		@echo Removing dependencies...
+		@yarn remove discord.js dotenv mongoose 
+
+		@echo Removing Dev-dependencies...
+		yarn remove typescript tsc-watch prettier npm-run-all @uwu-codes/tsconfig @types/node @sapphire/prettier-config
+
+		@echo Installing dependencies...
+		@yarn add discord.js dotenv mongoose
+
+		@echo Installing Dev-dependencies...
+		@yarn add -D typescript tsc-watch prettier npm-run-all @uwu-codes/tsconfig @types/node @sapphire/prettier-config
 
 		@echo "Done!"
 		@echo ---------------------------------------------

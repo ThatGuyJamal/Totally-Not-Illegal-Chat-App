@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const discord_js_1 = require("discord.js");
-class SlashCommand {
+import { ApplicationCommandOptionType, } from "discord.js";
+export default class SlashCommand {
     _client;
     constructor(client) {
         this._client = client;
@@ -106,7 +104,7 @@ class SlashCommand {
                 options.push({
                     name: arg.toLowerCase().replace(/\s+/g, "-"),
                     description: arg,
-                    type: discord_js_1.ApplicationCommandOptionType.String,
+                    type: ApplicationCommandOptionType.String,
                     required: a < minArgs,
                 });
             }
@@ -114,5 +112,3 @@ class SlashCommand {
         return options;
     }
 }
-exports.default = SlashCommand;
-//# sourceMappingURL=SlashCommand.js.map

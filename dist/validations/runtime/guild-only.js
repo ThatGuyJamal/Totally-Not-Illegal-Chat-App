@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = (command, usage) => {
+export default (command, usage) => {
     const { guildOnly } = command.commandObject;
     const { guild, message, interaction } = usage;
     if (guildOnly === true && !guild) {
@@ -13,4 +11,3 @@ exports.default = (command, usage) => {
     }
     return true;
 };
-//# sourceMappingURL=guild-only.js.map

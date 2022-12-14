@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const discord_js_1 = require("discord.js");
-const typings_1 = require("../../typings");
-exports.default = {
+import { PermissionFlagsBits } from "discord.js";
+import { CommandType, } from "../../typings/index.js";
+export default {
     description: "Sets the prefix for this server",
     minArgs: 1,
     syntaxError: "Correct syntax: {PREFIX}prefix {ARGS}",
     expectedArgs: "<prefix>",
-    type: typings_1.CommandType.BOTH,
+    type: CommandType.BOTH,
     guildOnly: true,
-    permissions: [discord_js_1.PermissionFlagsBits.Administrator],
+    permissions: [PermissionFlagsBits.Administrator],
     callback: (commandUsage) => {
         const { instance, guild, text: prefix } = commandUsage;
         if (!instance.isConnectedToDB) {
@@ -25,4 +23,3 @@ exports.default = {
         };
     },
 };
-//# sourceMappingURL=prefix.js.map

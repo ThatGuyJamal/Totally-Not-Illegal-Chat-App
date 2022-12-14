@@ -1,1 +1,1 @@
-{"version":3,"file":"disabled-commands-schema.d.ts","sourceRoot":"","sources":["../../lib/models/disabled-commands-schema.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;AAWA,wBAAkE"}
+{"version":3,"file":"disabled-commands-schema.d.ts","sourceRoot":"","sources":["../../lib/models/disabled-commands-schema.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,UAAU,CAAC;;AAY3B,wBAAkE"}

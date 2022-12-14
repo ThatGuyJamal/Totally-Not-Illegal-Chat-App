@@ -1,6 +1,6 @@
-import { CommandObject, CommandType, CommandUsage } from "../../typings";
-import Command from "../../classes/cmd/Command";
 import { PermissionFlagsBits, ApplicationCommandOptionType } from "discord.js";
+import { CommandType, CommandUsage } from "../../typings/index.js";
+import Command from "../../classes/cmd/Command.js";
 
 export default {
   description: "Toggles a command on or off for your server",

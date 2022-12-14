@@ -1,6 +1,6 @@
-import { CommandType, CommandUsage } from "../../typings";
-import Command from "../../classes/cmd/Command";
 import { ApplicationCommandOptionType } from "discord.js";
+import { CommandType, CommandUsage } from "../../typings/index.js";
+import Command from "../../classes/cmd/Command.js";
 declare const _default: {
     description: string;
     type: CommandType;

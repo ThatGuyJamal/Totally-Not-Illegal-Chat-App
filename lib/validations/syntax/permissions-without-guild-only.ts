@@ -1,4 +1,4 @@
-import Command from "../../classes/cmd/Command";
+import Command from "../../classes/cmd/Command.js";
 
 export default (command: Command) => {
   const { commandObject, commandName } = command;

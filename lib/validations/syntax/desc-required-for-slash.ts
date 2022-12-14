@@ -1,5 +1,5 @@
-import { CommandType } from "../../typings";
-import Command from "../../classes/cmd/Command";
+import { CommandType } from "../../typings/index.js";
+import Command from "../../classes/cmd/Command.js";
 
 export default (command: Command) => {
   const { commandName, commandObject } = command;

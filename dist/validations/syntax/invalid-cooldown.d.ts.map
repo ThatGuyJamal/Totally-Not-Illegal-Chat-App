@@ -1,1 +1,1 @@
-{"version":3,"file":"invalid-cooldown.d.ts","sourceRoot":"","sources":["../../../lib/validations/syntax/invalid-cooldown.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,2BAA2B,CAAC;kCAEvB,OAAO;AAAhC,wBAaE"}
+{"version":3,"file":"invalid-cooldown.d.ts","sourceRoot":"","sources":["../../../lib/validations/syntax/invalid-cooldown.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,8BAA8B,CAAC;kCAE1B,OAAO;AAAhC,wBAaE"}

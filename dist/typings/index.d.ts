@@ -1,5 +1,5 @@
 import { Client, ApplicationCommandOption, CommandInteraction, Guild, GuildMember, TextChannel, User, Message } from "discord.js";
-import AbyssCommandHandler from "../main";
+import AbyssCommandHandler from "../main.js";
 /**
  * @class
  * @version 1.0.0

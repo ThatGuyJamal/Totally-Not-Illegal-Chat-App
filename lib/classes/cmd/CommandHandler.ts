@@ -1,11 +1,12 @@
-import getAllFiles from "../../utils/get-all-files";
-import Command from "./Command";
-import SlashCommands from "./SlashCommand";
-import ChannelCommands from "./ChannelCommand";
-import CustomCommands from "./CustomCommand";
-import DisabledCommands from "./DisabledCommands";
-import PrefixHandler from "./PrefixHandler";
-import ACH from "../../main";
+import getAllFiles from "../../utils/get-all-files.js";
+import Command from "./Command.js";
+import SlashCommands from "./SlashCommand.js";
+import ChannelCommands from "./ChannelCommand.js";
+import CustomCommands from "./CustomCommand.js";
+import DisabledCommands from "./DisabledCommands.js";
+import PrefixHandler from "./PrefixHandler.js";
+import ACH from "../../main.js";
+
 import {
   Client,
   Collection,
@@ -23,7 +24,7 @@ import {
   CommandType,
   CommandUsage,
   InternalCooldownConfig,
-} from "../../typings";
+} from "../../typings/index.js";
 
 export default class CommandHandler {
   // <commandName, instance of the Command class>

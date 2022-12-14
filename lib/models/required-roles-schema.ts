@@ -1,4 +1,5 @@
-import { Schema, model, models } from "mongoose";
+import pkg from "mongoose";
+const { Schema, model, models } = pkg;
 
 const requiredRolesSchema = new Schema({
   // guildId-commandName

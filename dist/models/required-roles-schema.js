@@ -1,7 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = require("mongoose");
-const requiredRolesSchema = new mongoose_1.Schema({
+import pkg from "mongoose";
+const { Schema, model, models } = pkg;
+const requiredRolesSchema = new Schema({
     // guildId-commandName
     _id: {
         type: String,
@@ -13,5 +12,4 @@ const requiredRolesSchema = new mongoose_1.Schema({
     },
 });
 const name = "required-roles";
-exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, requiredRolesSchema);
-//# sourceMappingURL=required-roles-schema.js.map
+export default models[name] || model(name, requiredRolesSchema);

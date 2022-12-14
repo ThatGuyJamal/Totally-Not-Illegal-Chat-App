@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
-import ACH from "../../main";
-import { Events } from "../../typings";
+import ACH from "../../main.js";
+import { Events } from "../../typings/index.js";
 export default class EventHandler {
     private _eventCallbacks;
     private _instance;

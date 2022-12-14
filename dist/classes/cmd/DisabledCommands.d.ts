@@ -1,4 +1,4 @@
-import ACH from "../../main";
+import ACH from "../../main.js";
 export default class DisabledCommands {
     _disabledCommands: string[];
     private _instance;

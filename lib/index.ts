@@ -1,12 +1,12 @@
-import AbyssCommandHandler from "./main";
+import AbyssCommandHandler from "./main.js";
 
-import Command from "./classes/cmd/Command";
+import Command from "./classes/cmd/Command.js";
 import {
   CommandObject,
   CommandType,
   CooldownTypes,
   DefaultCommands,
-} from "./typings";
+} from "./typings/index.js";
 
 export {
   AbyssCommandHandler,

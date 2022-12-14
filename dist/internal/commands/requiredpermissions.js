@@ -1,29 +1,24 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const discord_js_1 = require("discord.js");
-const required_permissions_schema_1 = __importDefault(require("../../models/required-permissions-schema"));
-const typings_1 = require("../../typings");
+import { PermissionFlagsBits, ApplicationCommandOptionType } from "discord.js";
+import requiredPermissions from "../../models/required-permissions-schema";
+import { CommandType, } from "../../typings/index.js";
 const clearAllPermissions = "Clear All Permissions";
-exports.default = {
+export default {
     description: "Sets what commands require what permissions",
-    type: typings_1.CommandType.SLASH,
+    type: CommandType.SLASH,
     guildOnly: true,
-    permissions: [discord_js_1.PermissionFlagsBits.Administrator],
+    permissions: [PermissionFlagsBits.Administrator],
     options: [
         {
             name: "command",
             description: "The command to set permissions to",
-            type: discord_js_1.ApplicationCommandOptionType.String,
+            type: ApplicationCommandOptionType.String,
             required: true,
             autocomplete: true,
         },
         {
             name: "permission",
             description: "The permission to set for the command",
-            type: discord_js_1.ApplicationCommandOptionType.String,
+            type: ApplicationCommandOptionType.String,
             required: false,
             autocomplete: true,
         },
@@ -33,7 +28,7 @@ exports.default = {
             return [...command.instance.commandHandler.commands.keys()];
         }
         else if (arg === "permission") {
-            return [clearAllPermissions, ...Object.keys(discord_js_1.PermissionFlagsBits)];
+            return [clearAllPermissions, ...Object.keys(PermissionFlagsBits)];
         }
     },
     callback: async (commandUsage) => {
@@ -54,7 +49,7 @@ exports.default = {
         }
         const _id = `${guild.id}-${command.commandName}`;
         if (!permission) {
-            const document = await required_permissions_schema_1.default.findById(_id);
+            const document = await requiredPermissions.findById(_id);
             const permissions = document && document.permissions?.length
                 ? document.permissions.join(", ")
                 : "None.";
@@ -64,20 +59,20 @@ exports.default = {
             };
         }
         if (permission === clearAllPermissions) {
-            await required_permissions_schema_1.default.deleteOne({ _id });
+            await requiredPermissions.deleteOne({ _id });
             return {
                 content: `The command "${commandName}" no longer requires any permissions.`,
                 ephemeral: true,
             };
         }
-        const alreadyExists = await required_permissions_schema_1.default.findOne({
+        const alreadyExists = await requiredPermissions.findOne({
             _id,
             permissions: {
                 $in: [permission],
             },
         });
         if (alreadyExists) {
-            await required_permissions_schema_1.default.findOneAndUpdate({
+            await requiredPermissions.findOneAndUpdate({
                 _id,
             }, {
                 _id,
@@ -90,7 +85,7 @@ exports.default = {
                 ephemeral: true,
             };
         }
-        await required_permissions_schema_1.default.findOneAndUpdate({
+        await requiredPermissions.findOneAndUpdate({
             _id,
         }, {
             _id,
@@ -106,4 +101,3 @@ exports.default = {
         };
     },
 };
-//# sourceMappingURL=requiredpermissions.js.map

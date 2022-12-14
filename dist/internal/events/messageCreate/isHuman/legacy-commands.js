@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = async (message, instance) => {
+export default async (message, instance) => {
     const { guild, content } = message;
     const { commandHandler } = instance;
     if (!commandHandler)
@@ -30,4 +28,3 @@ exports.default = async (message, instance) => {
         message.channel.send(response).catch(() => { });
     }
 };
-//# sourceMappingURL=legacy-commands.js.map

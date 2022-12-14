@@ -1,8 +1,8 @@
 import { CommandInteraction, Message } from "discord.js";
 
-import customCommandSchema from "../../models/custom-command-schema";
-import CommandHandler from "./CommandHandler";
-import ACH from "../../main";
+import customCommandSchema from "../../models/custom-command-schema.js";
+import CommandHandler from "./CommandHandler.js";
+import ACH from "../../main.js";
 
 export default class CustomCommands {
   // guildId-commandName: response

@@ -3,9 +3,9 @@ import {
   CooldownConfig,
   CooldownTypes,
   InternalCooldownConfig,
-} from "../../typings";
-import ACH from "../../main";
-import cooldownSchema from "../../models/cooldown-schema";
+} from "../../typings/index.js";
+import ACH from "../../main.js";
+import cooldownSchema from "../../models/cooldown-schema.js";
 
 const cooldownDurations = {
   s: 1,

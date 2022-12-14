@@ -1,4 +1,8 @@
-https://github.com/ThatGuyJamal/Abyss-The-Bot
+# `Abyss-Command-Handler`
+
+A simple command handler for discord.js v14.
+
+A fork of [WOK-V2](https://github.com/AlexzanderFlores/WOKCommands-v2) by [AlexzanderFlores](https://github.com/AlexzanderFlores) but with my own changes and improvements.
 
 ## Todo
 

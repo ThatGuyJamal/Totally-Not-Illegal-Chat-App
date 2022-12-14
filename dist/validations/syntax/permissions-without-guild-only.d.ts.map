@@ -1,1 +1,1 @@
-{"version":3,"file":"permissions-without-guild-only.d.ts","sourceRoot":"","sources":["../../../lib/validations/syntax/permissions-without-guild-only.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,2BAA2B,CAAC;kCAEvB,OAAO;AAAhC,wBASE"}
+{"version":3,"file":"permissions-without-guild-only.d.ts","sourceRoot":"","sources":["../../../lib/validations/syntax/permissions-without-guild-only.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,8BAA8B,CAAC;kCAE1B,OAAO;AAAhC,wBASE"}

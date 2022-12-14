@@ -1,11 +1,16 @@
 import mongoose from "mongoose";
 
 import type { Client } from "discord.js";
-import CommandHandler from "./classes/cmd/CommandHandler";
-import EventHandler from "./classes/event/EventHandler";
-import FeaturesHandler from "./classes/util/Features";
-import { Cooldowns } from "./classes/util/Cooldowns";
-import { DefaultCommands, Validations, Events, ClientOptions } from "./typings";
+import CommandHandler from "./classes/cmd/CommandHandler.js";
+import EventHandler from "./classes/event/EventHandler.js";
+import FeaturesHandler from "./classes/util/Features.js";
+import { Cooldowns } from "./classes/util/Cooldowns.js";
+import {
+  DefaultCommands,
+  Validations,
+  Events,
+  ClientOptions,
+} from "./typings/index.js";
 
 // The prefix used if non is passed
 const noPrefixValue = "??";

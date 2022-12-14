@@ -1,7 +1,7 @@
-import Command from "../../classes/cmd/Command";
-import requiredPermissions from "../../models/required-permissions-schema";
+import requiredPermissions from "../../models/required-permissions-schema.js";
 import { PermissionFlagsBits } from "discord.js";
-import { CommandUsage } from "../../typings";
+import { CommandUsage } from "../../typings/index.js";
+import Command from "../../classes/cmd/Command.js";
 
 const keys = Object.keys(PermissionFlagsBits);
 
