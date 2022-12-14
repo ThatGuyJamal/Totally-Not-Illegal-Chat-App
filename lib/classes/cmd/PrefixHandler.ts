@@ -1,6 +1,6 @@
 import guildPrefixSchema from "../../models/guild-prefix-schema";
-import ACH from "../../../typings";
 import { Collection } from "discord.js";
+import ACH from "../../main";
 
 export default class PrefixHandler {
   // <guildId: prefix>

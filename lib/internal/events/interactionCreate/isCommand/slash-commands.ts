@@ -1,6 +1,6 @@
 import { CommandInteraction } from "discord.js";
 
-import ACH from "../../../../../typings";
+import ACH from "../../../../main";
 
 export default async (interaction: CommandInteraction, instance: ACH) => {
   const { commandHandler } = instance;

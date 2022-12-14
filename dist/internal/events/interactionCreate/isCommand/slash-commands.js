@@ -28,3 +28,4 @@ exports.default = async (interaction, instance) => {
         interaction.reply(response).catch(() => { });
     }
 };
+//# sourceMappingURL=slash-commands.js.map

@@ -14,3 +14,4 @@ const customCommandSchema = new mongoose_1.Schema({
 });
 const name = "custom-commands";
 exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, customCommandSchema);
+//# sourceMappingURL=custom-command-schema.js.map

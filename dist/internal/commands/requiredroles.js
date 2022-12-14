@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const required_roles_schema_1 = __importDefault(require("../../models/required-roles-schema"));
-const typings_1 = require("../../../typings");
+const typings_1 = require("../../typings");
 exports.default = {
     description: "Sets what commands require what roles",
     type: typings_1.CommandType.SLASH,
@@ -101,3 +101,4 @@ exports.default = {
         };
     },
 };
+//# sourceMappingURL=requiredroles.js.map

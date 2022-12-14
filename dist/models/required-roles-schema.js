@@ -14,3 +14,4 @@ const requiredRolesSchema = new mongoose_1.Schema({
 });
 const name = "required-roles";
 exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, requiredRolesSchema);
+//# sourceMappingURL=required-roles-schema.js.map

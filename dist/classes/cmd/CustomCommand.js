@@ -79,3 +79,4 @@ class CustomCommands {
     }
 }
 exports.default = CustomCommands;
+//# sourceMappingURL=CustomCommand.js.map

@@ -3,7 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const typings_1 = require("../../../typings");
 const get_all_files_1 = __importDefault(require("../../utils/get-all-files"));
 const Command_1 = __importDefault(require("./Command"));
 const SlashCommand_1 = __importDefault(require("./SlashCommand"));
@@ -13,6 +12,7 @@ const DisabledCommands_1 = __importDefault(require("./DisabledCommands"));
 const PrefixHandler_1 = __importDefault(require("./PrefixHandler"));
 const discord_js_1 = require("discord.js");
 const path_1 = __importDefault(require("path"));
+const typings_1 = require("../../typings");
 class CommandHandler {
     // <commandName, instance of the Command class>
     _commands = new discord_js_1.Collection();
@@ -179,3 +179,4 @@ class CommandHandler {
     }
 }
 exports.default = CommandHandler;
+//# sourceMappingURL=CommandHandler.js.map

@@ -1,6 +1,6 @@
 import { PermissionFlagsBits } from "discord.js";
 
-import { CommandObject, CommandType, CommandUsage } from "../../../typings";
+import { CommandObject, CommandType, CommandUsage } from "../../typings";
 
 export default {
   description: "Sets the prefix for this server",

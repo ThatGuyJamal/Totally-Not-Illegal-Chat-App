@@ -14,3 +14,4 @@ const guildPrefixSchema = new mongoose_1.Schema({
 });
 const name = "guild-prefixes";
 exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, guildPrefixSchema);
+//# sourceMappingURL=guild-prefix-schema.js.map

@@ -1,5 +1,5 @@
 import disabledCommandSchema from "../../models/disabled-commands-schema";
-import ACH from "../../../typings";
+import ACH from "../../main";
 
 export default class DisabledCommands {
   // array of `${guildId}-${commandName}`

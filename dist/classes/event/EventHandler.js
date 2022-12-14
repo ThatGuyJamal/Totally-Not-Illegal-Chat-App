@@ -77,3 +77,4 @@ class EventHandler {
     }
 }
 exports.default = EventHandler;
+//# sourceMappingURL=EventHandler.js.map

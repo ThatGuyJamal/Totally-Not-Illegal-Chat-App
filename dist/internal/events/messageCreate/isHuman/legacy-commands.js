@@ -30,3 +30,4 @@ exports.default = async (message, instance) => {
         message.channel.send(response).catch(() => { });
     }
 };
+//# sourceMappingURL=legacy-commands.js.map

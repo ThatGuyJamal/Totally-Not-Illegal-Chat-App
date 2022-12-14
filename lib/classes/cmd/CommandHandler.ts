@@ -1,11 +1,3 @@
-import ACH, {
-  CommandObject,
-  CommandType,
-  CommandUsage,
-  DefaultCommands,
-  InternalCooldownConfig,
-} from "../../../typings";
-
 import getAllFiles from "../../utils/get-all-files";
 import Command from "./Command";
 import SlashCommands from "./SlashCommand";
@@ -13,6 +5,7 @@ import ChannelCommands from "./ChannelCommand";
 import CustomCommands from "./CustomCommand";
 import DisabledCommands from "./DisabledCommands";
 import PrefixHandler from "./PrefixHandler";
+import ACH from "../../main";
 import {
   Client,
   Collection,
@@ -23,6 +16,14 @@ import {
 } from "discord.js";
 
 import path from "path";
+
+import {
+  CommandObject,
+  DefaultCommands,
+  CommandType,
+  CommandUsage,
+  InternalCooldownConfig,
+} from "../../typings";
 
 export default class CommandHandler {
   // <commandName, instance of the Command class>

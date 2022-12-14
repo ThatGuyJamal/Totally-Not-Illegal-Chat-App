@@ -14,3 +14,4 @@ const channelCommandSchema = new mongoose_1.Schema({
 });
 const name = "channel-commands";
 exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, channelCommandSchema);
+//# sourceMappingURL=channel-commands-schema.js.map

@@ -14,3 +14,4 @@ const requiredPermissionsSchema = new mongoose_1.Schema({
 });
 const name = "required-permissions";
 exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, requiredPermissionsSchema);
+//# sourceMappingURL=required-permissions-schema.js.map

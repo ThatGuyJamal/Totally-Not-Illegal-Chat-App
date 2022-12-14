@@ -1,9 +1,10 @@
 import { Collection } from "discord.js";
-import ACH, {
+import {
   CooldownConfig,
   CooldownTypes,
   InternalCooldownConfig,
-} from "../../../typings";
+} from "../../typings";
+import ACH from "../../main";
 import cooldownSchema from "../../models/cooldown-schema";
 
 const cooldownDurations = {

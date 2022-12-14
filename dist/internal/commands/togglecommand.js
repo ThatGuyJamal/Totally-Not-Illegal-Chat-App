@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const typings_1 = require("../../../typings");
+const typings_1 = require("../../typings");
 const discord_js_1 = require("discord.js");
 exports.default = {
     description: "Toggles a command on or off for your server",
@@ -51,3 +51,4 @@ exports.default = {
         }
     },
 };
+//# sourceMappingURL=togglecommand.js.map

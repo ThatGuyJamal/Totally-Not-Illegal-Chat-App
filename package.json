@@ -2,7 +2,7 @@
   "name": "abyss-command-handler",
   "version": "1.0.0",
   "main": "./dist/index.js",
-  "typings": "./typings.d.ts",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "watch": "tsc -w",

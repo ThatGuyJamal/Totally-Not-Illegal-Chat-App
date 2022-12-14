@@ -33,3 +33,4 @@ const getAllFiles = (path, foldersOnly = false) => {
     return filesFound;
 };
 exports.default = getAllFiles;
+//# sourceMappingURL=get-all-files.js.map

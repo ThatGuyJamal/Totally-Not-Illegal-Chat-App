@@ -49,3 +49,4 @@ class DisabledCommands {
     }
 }
 exports.default = DisabledCommands;
+//# sourceMappingURL=DisabledCommands.js.map

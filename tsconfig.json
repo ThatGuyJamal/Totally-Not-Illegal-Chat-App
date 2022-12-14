@@ -1,8 +1,11 @@
 {
 	"compilerOptions": {
-		"resolveJsonModule": true,
-		"target": "esnext",
-		"module": "commonjs",
+		"target": "ESNext",
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
 		"outDir": "./dist",
 		"rootDir": "./lib",
 		"strict": true,

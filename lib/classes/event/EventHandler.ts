@@ -1,7 +1,8 @@
 import { Client, Interaction, InteractionType, Message } from "discord.js";
-import ACH, { Events } from "../../../typings";
+import ACH from "../../main";
 import path from "path";
 import getAllFiles from "../../utils/get-all-files";
+import { Events } from "../../typings";
 
 export default class EventHandler {
   // <eventName, array of [function, dynamic validation functions]>

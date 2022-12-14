@@ -1,4 +1,4 @@
-import { AbyssCommandHandler } from "./Abyss";
-import { CommandType, CooldownTypes, DefaultCommands } from "../typings";
+import AbyssCommandHandler from "./main";
+import Command from "./classes/cmd/Command";
 
-export { AbyssCommandHandler, CommandType, CooldownTypes, DefaultCommands };
+export { AbyssCommandHandler, Command };

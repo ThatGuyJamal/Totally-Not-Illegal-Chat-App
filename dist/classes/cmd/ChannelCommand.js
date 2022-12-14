@@ -59,3 +59,4 @@ class ChannelCommands {
     }
 }
 exports.default = ChannelCommands;
+//# sourceMappingURL=ChannelCommand.js.map

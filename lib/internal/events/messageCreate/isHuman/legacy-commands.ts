@@ -1,6 +1,6 @@
 import type { Message } from "discord.js";
 
-import ACH from "../../../../../typings";
+import ACH from "../../../../main";
 
 export default async (message: Message, instance: ACH) => {
   const { guild, content } = message;

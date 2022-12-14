@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
-const typings_1 = require("../../../typings");
+const typings_1 = require("../../typings");
 const noCommands = "No custom commands configured.";
 exports.default = {
     description: "Creates a custom command",
@@ -72,7 +72,7 @@ exports.default = {
             const commandName = interaction.options.getString("command", true);
             const description = interaction.options.getString("description", true);
             const response = interaction.options.getString("response", true);
-            await instance.commandHandler.customCommands.create(guild.id, commandName, description, response);
+            await instance.commandHandler?.customCommands.create(guild.id, commandName, description, response);
             return {
                 content: `Custom command "${commandName}" has been created!`,
                 ephemeral: true,
@@ -86,7 +86,7 @@ exports.default = {
                     ephemeral: true,
                 };
             }
-            await instance.commandHandler.customCommands.delete(guild.id, commandName);
+            await instance.commandHandler?.customCommands.delete(guild.id, commandName);
             return {
                 content: `Custom command "${commandName}" has been deleted!`,
                 ephemeral: true,
@@ -94,3 +94,4 @@ exports.default = {
         }
     },
 };
+//# sourceMappingURL=customcommand.js.map

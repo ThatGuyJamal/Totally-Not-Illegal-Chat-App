@@ -14,3 +14,4 @@ const cooldownSchema = new mongoose_1.Schema({
 });
 const name = "cooldowns";
 exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, cooldownSchema);
+//# sourceMappingURL=cooldown-schema.js.map

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
-const typings_1 = require("../../../typings");
+const typings_1 = require("../../typings");
 exports.default = {
     description: "Specifies what commands can be ran inside of what channels",
     type: typings_1.CommandType.SLASH,
@@ -37,7 +37,7 @@ exports.default = {
         const commandName = interaction.options.getString("command");
         // @ts-ignore
         const channel = interaction.options.getChannel("channel");
-        const command = instance.commandHandler.commands.get(commandName.toLowerCase());
+        const command = instance.commandHandler?.commands.get(commandName.toLowerCase());
         if (!command) {
             return {
                 content: `The command "${commandName}" does not exist.`,
@@ -66,3 +66,4 @@ exports.default = {
         };
     },
 };
+//# sourceMappingURL=channelcommand.js.map

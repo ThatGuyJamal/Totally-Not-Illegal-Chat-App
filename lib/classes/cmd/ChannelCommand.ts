@@ -1,5 +1,5 @@
 import { Collection } from "discord.js";
-import ACH from "../../../typings";
+import ACH from "../../main";
 import channelCommands from "../../models/channel-commands-schema";
 
 class ChannelCommands {

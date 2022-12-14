@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const required_permissions_schema_1 = __importDefault(require("../../models/required-permissions-schema"));
-const typings_1 = require("../../../typings");
+const typings_1 = require("../../typings");
 const clearAllPermissions = "Clear All Permissions";
 exports.default = {
     description: "Sets what commands require what permissions",
@@ -106,3 +106,4 @@ exports.default = {
         };
     },
 };
+//# sourceMappingURL=requiredpermissions.js.map

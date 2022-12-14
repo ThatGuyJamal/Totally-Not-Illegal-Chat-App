@@ -5,7 +5,7 @@ import {
   PermissionFlagsBits,
 } from "discord.js";
 
-import { CommandObject, CommandType, CommandUsage } from "../../../typings";
+import { CommandObject, CommandType, CommandUsage } from "../../typings";
 import Command from "../../classes/cmd/Command";
 
 const noCommands = "No custom commands configured.";
@@ -95,7 +95,7 @@ export default {
       const description = interaction.options.getString("description", true);
       const response = interaction.options.getString("response", true);
 
-      await instance.commandHandler.customCommands.create(
+      await instance.commandHandler?.customCommands.create(
         guild!.id,
         commandName,
         description,
@@ -116,7 +116,7 @@ export default {
         };
       }
 
-      await instance.commandHandler.customCommands.delete(
+      await instance.commandHandler?.customCommands.delete(
         guild!.id,
         commandName
       );

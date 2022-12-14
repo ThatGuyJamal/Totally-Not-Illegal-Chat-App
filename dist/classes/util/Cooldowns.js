@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cooldowns = void 0;
 const discord_js_1 = require("discord.js");
-const typings_1 = require("../../../typings");
+const typings_1 = require("../../typings");
 const cooldown_schema_1 = __importDefault(require("../../models/cooldown-schema"));
 const cooldownDurations = {
     s: 1,
@@ -168,3 +168,4 @@ class Cooldowns {
     }
 }
 exports.Cooldowns = Cooldowns;
+//# sourceMappingURL=Cooldowns.js.map

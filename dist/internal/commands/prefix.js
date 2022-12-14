@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
-const typings_1 = require("../../../typings");
+const typings_1 = require("../../typings");
 exports.default = {
     description: "Sets the prefix for this server",
     minArgs: 1,
@@ -25,3 +25,4 @@ exports.default = {
         };
     },
 };
+//# sourceMappingURL=prefix.js.map

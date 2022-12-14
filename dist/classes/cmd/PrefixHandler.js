@@ -59,3 +59,4 @@ class PrefixHandler {
     }
 }
 exports.default = PrefixHandler;
+//# sourceMappingURL=PrefixHandler.js.map

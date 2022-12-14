@@ -1,7 +1,7 @@
 import { ApplicationCommandOptionType, CommandInteraction } from "discord.js";
 
 import Command from "../../classes/cmd/Command";
-import { CommandObject, CommandType, CommandUsage } from "../../../typings";
+import { CommandObject, CommandType, CommandUsage } from "../../typings";
 
 export default {
   description: "Specifies what commands can be ran inside of what channels",
@@ -47,7 +47,7 @@ export default {
     // @ts-ignore
     const channel = interaction.options.getChannel("channel");
 
-    const command = instance.commandHandler.commands.get(
+    const command = instance.commandHandler?.commands.get(
       commandName.toLowerCase()
     );
     if (!command) {

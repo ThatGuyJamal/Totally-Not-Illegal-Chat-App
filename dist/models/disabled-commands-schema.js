@@ -10,3 +10,4 @@ const disabledCommandSchema = new mongoose_1.Schema({
 });
 const name = "disabled-commands";
 exports.default = mongoose_1.models[name] || (0, mongoose_1.model)(name, disabledCommandSchema);
+//# sourceMappingURL=disabled-commands-schema.js.map

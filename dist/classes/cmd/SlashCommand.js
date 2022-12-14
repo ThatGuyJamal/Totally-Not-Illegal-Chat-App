@@ -115,3 +115,4 @@ class SlashCommand {
     }
 }
 exports.default = SlashCommand;
+//# sourceMappingURL=SlashCommand.js.map

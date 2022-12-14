@@ -1,4 +1,5 @@
-import ACH, { CommandObject } from "../../../typings";
+import ACH from "../../main";
+import { CommandObject } from "../../typings";
 
 export default class Command {
   private _instance: ACH;
