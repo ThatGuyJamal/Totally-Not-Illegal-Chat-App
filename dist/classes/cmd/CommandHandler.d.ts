@@ -18,10 +18,6 @@ export default class CommandHandler {
     private _disabledCommands;
     private _prefixes;
     constructor(instance: ACH, commandsDir: string, client: Client);
-    /**
-     * Reads all command files and adds them to the commands cache.
-     * All internal commands are loaded from the internal/commands folder.
-     */
     private readFiles;
     runCommand(command: Command, args: string[], message: Message | null, interaction: CommandInteraction | null): Promise<any>;
     private getValidations;

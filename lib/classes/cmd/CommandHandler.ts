@@ -15,7 +15,7 @@ import {
   TextChannel,
 } from "discord.js";
 
-import path from "path";
+import path from "node:path";
 
 import {
   CommandObject,
@@ -28,8 +28,9 @@ import {
 export default class CommandHandler {
   // <commandName, instance of the Command class>
   public _commands: Collection<string, Command> = new Collection();
+
   private _validations = this.getValidations(
-    path.join(__dirname, "validations", "runtime")
+    path.join(__dirname, "../../validations", "runtime")
   );
 
   private _instance: ACH;
@@ -59,15 +60,12 @@ export default class CommandHandler {
     this.readFiles();
   }
 
-  /**
-   * Reads all command files and adds them to the commands cache.
-   * All internal commands are loaded from the internal/commands folder.
-   */
   private async readFiles() {
     const defaultCommands = getAllFiles(
       path.join(__dirname, "../../internal/commands")
     );
     const files = getAllFiles(this._commandsDir);
+
     const validations = [
       ...this.getValidations(
         path.join(__dirname, "../../validations", "syntax")

@@ -11,12 +11,12 @@ const CustomCommand_1 = __importDefault(require("./CustomCommand"));
 const DisabledCommands_1 = __importDefault(require("./DisabledCommands"));
 const PrefixHandler_1 = __importDefault(require("./PrefixHandler"));
 const discord_js_1 = require("discord.js");
-const path_1 = __importDefault(require("path"));
+const node_path_1 = __importDefault(require("node:path"));
 const typings_1 = require("../../typings");
 class CommandHandler {
     // <commandName, instance of the Command class>
     _commands = new discord_js_1.Collection();
-    _validations = this.getValidations(path_1.default.join(__dirname, "validations", "runtime"));
+    _validations = this.getValidations(node_path_1.default.join(__dirname, "../../validations", "runtime"));
     _instance;
     _client;
     _commandsDir;
@@ -40,15 +40,11 @@ class CommandHandler {
         ];
         this.readFiles();
     }
-    /**
-     * Reads all command files and adds them to the commands cache.
-     * All internal commands are loaded from the internal/commands folder.
-     */
     async readFiles() {
-        const defaultCommands = (0, get_all_files_1.default)(path_1.default.join(__dirname, "../../internal/commands"));
+        const defaultCommands = (0, get_all_files_1.default)(node_path_1.default.join(__dirname, "../../internal/commands"));
         const files = (0, get_all_files_1.default)(this._commandsDir);
         const validations = [
-            ...this.getValidations(path_1.default.join(__dirname, "../../validations", "syntax")),
+            ...this.getValidations(node_path_1.default.join(__dirname, "../../validations", "syntax")),
             ...this.getValidations(this._instance.validations?.syntax),
         ];
         for (let fileData of [...defaultCommands, ...files]) {
