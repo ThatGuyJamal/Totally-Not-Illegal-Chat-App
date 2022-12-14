@@ -3,63 +3,63 @@ import Command from "../../classes/cmd/Command";
 import { PermissionFlagsBits, ApplicationCommandOptionType } from "discord.js";
 
 export default {
-  description: "Toggles a command on or off for your server",
+	description: "Toggles a command on or off for your server",
 
-  type: CommandType.SLASH,
-  guildOnly: true,
+	type: CommandType.SLASH,
+	guildOnly: true,
 
-  permissions: [PermissionFlagsBits.Administrator],
+	permissions: [PermissionFlagsBits.Administrator],
 
-  options: [
-    {
-      name: "command",
-      description: "The command to toggle on or off",
-      type: ApplicationCommandOptionType.String,
-      required: true,
-      autocomplete: true,
-    },
-  ],
+	options: [
+		{
+			name: "command",
+			description: "The command to toggle on or off",
+			type: ApplicationCommandOptionType.String,
+			required: true,
+			autocomplete: true,
+		},
+	],
 
-  autocomplete: (command: Command) => {
-    return [...command.instance.commandHandler.commands.keys()];
-  },
+	autocomplete: (command: Command) => {
+		return [...command.instance.commandHandler.commands.keys()];
+	},
 
-  callback: async (commandUsage: CommandUsage) => {
-    const { instance, guild, text: commandName, interaction } = commandUsage;
+	callback: async (commandUsage: CommandUsage) => {
+		const { instance, guild, text: commandName, interaction } = commandUsage;
 
-    if (!instance.isConnectedToDB) {
-      return {
-        content:
-          "This bot is not connected to a database which is required for this command. Please contact the bot owner.",
-        ephemeral: true,
-      };
-    }
+		if (!instance.isConnectedToDB) {
+			return {
+				content:
+					"This bot is not connected to a database which is required for this command. Please contact the bot owner.",
+				ephemeral: true,
+			};
+		}
 
-    // Check if the command to disable is the same as this command
+		// Check if the command to disable is the same as this command
 
-    if (commandName === "togglecommand") {
-      return {
-        content: "You cannot disable this command!",
-        ephemeral: true,
-      };
-    }
+		if (commandName === "togglecommand") {
+			return {
+				content: "You cannot disable this command!",
+				ephemeral: true,
+			};
+		}
 
-    const { disabledCommands } = instance.commandHandler;
+		const { disabledCommands } = instance.commandHandler;
 
-    if (disabledCommands.isDisabled(guild!.id, commandName)) {
-      await disabledCommands.enable(guild!.id, commandName);
+		if (disabledCommands.isDisabled(guild!.id, commandName)) {
+			await disabledCommands.enable(guild!.id, commandName);
 
-      return {
-        content: `Command "${commandName}" has been enabled`,
-        ephemeral: true,
-      };
-    } else {
-      await disabledCommands.disable(guild!.id, commandName);
+			return {
+				content: `Command "${commandName}" has been enabled`,
+				ephemeral: true,
+			};
+		} else {
+			await disabledCommands.disable(guild!.id, commandName);
 
-      return {
-        content: `Command "${commandName}" has been disabled`,
-        ephemeral: true,
-      };
-    }
-  },
+			return {
+				content: `Command "${commandName}" has been disabled`,
+				ephemeral: true,
+			};
+		}
+	},
 };
