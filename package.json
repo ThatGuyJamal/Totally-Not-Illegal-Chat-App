@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "@sapphire/prettier-config": "^1.4.4",
-    "@types/node": "18.7.18",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^18.11.15",
     "@types/prettier": "^2",
     "@uwu-codes/tsconfig": "^1.0.2",
     "npm-run-all": "^4.1.5",

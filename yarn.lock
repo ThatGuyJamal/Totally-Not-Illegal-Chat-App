@@ -970,17 +970,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 18.11.15
-  resolution: "@types/node@npm:18.11.15"
-  checksum: cae8692a5cee0316f93ee0342237eb921f70c51afb37c661c711a925a4642654ae7e404c5a80899d481c0cfaff3a6891ef04bacd330a2e72734192bfc91dc2d8
+"@types/mongoose@npm:^5.11.97":
+  version: 5.11.97
+  resolution: "@types/mongoose@npm:5.11.97"
+  dependencies:
+    mongoose: "*"
+  checksum: 54c896814a92898535eb8965f90308f2661b75f4a53e28405802fbe9f90ba7d37140f151b1e291e08555a1700d3486911104c108ed02a94c6feddeab6bd3bfea
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.7.18":
-  version: 18.7.18
-  resolution: "@types/node@npm:18.7.18"
-  checksum: 8aec61f0f96e2a69ce51f1f40f949ca578bbb4fe05d7c0b8ce3aeeb848e90f755837f17f6ac132ca404d974fe9b2974150ad3b4984fc9dc7c3ceddb10bae0167
+"@types/node@npm:*, @types/node@npm:^18.11.15":
+  version: 18.11.15
+  resolution: "@types/node@npm:18.11.15"
+  checksum: cae8692a5cee0316f93ee0342237eb921f70c51afb37c661c711a925a4642654ae7e404c5a80899d481c0cfaff3a6891ef04bacd330a2e72734192bfc91dc2d8
   languageName: node
   linkType: hard
 
@@ -1029,7 +1031,8 @@ __metadata:
   resolution: "abyss-command-handler@workspace:."
   dependencies:
     "@sapphire/prettier-config": ^1.4.4
-    "@types/node": 18.7.18
+    "@types/mongoose": ^5.11.97
+    "@types/node": ^18.11.15
     "@types/prettier": ^2
     "@uwu-codes/tsconfig": ^1.0.2
     discord.js: ^14.7.1
@@ -1720,7 +1723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:^6.8.0":
+"mongoose@npm:*, mongoose@npm:^6.8.0":
   version: 6.8.0
   resolution: "mongoose@npm:6.8.0"
   dependencies:

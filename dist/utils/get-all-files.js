@@ -1,6 +1,6 @@
 import fs from "fs";
 import _path from "path";
-const getAllFiles = (path, foldersOnly = false) => {
+const getAllFiles = async (path, foldersOnly = false) => {
     const files = fs.readdirSync(path, {
         withFileTypes: true,
     });
@@ -15,11 +15,11 @@ const getAllFiles = (path, foldersOnly = false) => {
                 });
             }
             else {
-                filesFound = [...filesFound, ...getAllFiles(filePath)];
+                filesFound = [...filesFound, ...(await getAllFiles(filePath))];
             }
             continue;
         }
-        const fileContents = require(filePath);
+        const fileContents = await import(filePath);
         filesFound.push({
             filePath,
             fileContents: fileContents?.default || fileContents,

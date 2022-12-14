@@ -38,13 +38,13 @@ update_all_deps:
 		@yarn remove discord.js dotenv mongoose 
 
 		@echo Removing Dev-dependencies...
-		yarn remove typescript tsc-watch prettier npm-run-all @uwu-codes/tsconfig @types/node @sapphire/prettier-config
+		yarn remove typescript tsc-watch prettier npm-run-all @uwu-codes/tsconfig @types/node @sapphire/prettier-config @types/mongoose
 
 		@echo Installing dependencies...
 		@yarn add discord.js dotenv mongoose
 
 		@echo Installing Dev-dependencies...
-		@yarn add -D typescript tsc-watch prettier npm-run-all @uwu-codes/tsconfig @types/node @sapphire/prettier-config
+		@yarn add -D typescript tsc-watch prettier npm-run-all @uwu-codes/tsconfig @types/node @sapphire/prettier-config @types/mongoose
 
 		@echo "Done!"
 		@echo ---------------------------------------------

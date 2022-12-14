@@ -3,7 +3,7 @@ import _path from "path";
 
 import { FileData } from "../typings/index.js";
 
-const getAllFiles = (path: string, foldersOnly = false) => {
+const getAllFiles = async (path: string, foldersOnly = false) => {
   const files = fs.readdirSync(path, {
     withFileTypes: true,
   });
@@ -19,12 +19,12 @@ const getAllFiles = (path: string, foldersOnly = false) => {
           fileContents: file,
         });
       } else {
-        filesFound = [...filesFound, ...getAllFiles(filePath)];
+        filesFound = [...filesFound, ...(await getAllFiles(filePath))];
       }
       continue;
     }
 
-    const fileContents = require(filePath);
+    const fileContents = await import(filePath);
 
     filesFound.push({
       filePath,

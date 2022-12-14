@@ -56,8 +56,11 @@ export default class CommandHandler {
     this._disabledCommands = new DisabledCommands(instance);
     this._prefixes = new PrefixHandler(instance);
 
+    //@ts-ignore
     this._validations = [
+      //@ts-ignore
       ...this._validations,
+      //@ts-ignore
       ...this.getValidations(instance.validations?.runtime),
     ];
 
@@ -65,16 +68,16 @@ export default class CommandHandler {
   }
 
   private async readFiles() {
-    const defaultCommands = getAllFiles(
+    const defaultCommands = await getAllFiles(
       path.join(__dirname, "../../internal/commands")
     );
-    const files = getAllFiles(this._commandsDir);
+    const files = await getAllFiles(this._commandsDir);
 
     const validations = [
-      ...this.getValidations(
+      ...(await this.getValidations(
         path.join(__dirname, "../../validations", "syntax")
-      ),
-      ...this.getValidations(this._instance.validations?.syntax),
+      )),
+      ...(await this.getValidations(this._instance.validations?.syntax)),
     ];
 
     for (let fileData of [...defaultCommands, ...files]) {
@@ -195,7 +198,7 @@ export default class CommandHandler {
       channel,
     };
 
-    for (const validation of this._validations) {
+    for (const validation of await this._validations) {
       if (!(await validation(command, usage, this._prefixes.get(guild?.id)))) {
         return;
       }
@@ -231,12 +234,12 @@ export default class CommandHandler {
     return await callback(usage);
   }
 
-  private getValidations(folder?: string) {
+  private async getValidations(folder?: string): Promise<any[]> {
     if (!folder) {
       return [];
     }
 
-    return getAllFiles(folder).map((fileData) => fileData.fileContents);
+    return (await getAllFiles(folder)).map((fileData) => fileData.fileContents);
   }
 
   public get commands() {

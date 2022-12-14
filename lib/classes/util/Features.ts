@@ -8,7 +8,7 @@ export default class FeaturesHandler {
   }
 
   private async readFiles(instance: ACH, featuresDir: string, client: Client) {
-    const files = getAllFiles(featuresDir);
+    const files = await getAllFiles(featuresDir);
 
     for (const file of files) {
       let func = require(file.filePath);

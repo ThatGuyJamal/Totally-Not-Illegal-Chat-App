@@ -32,18 +32,21 @@ export default class CommandHandler {
         this._customCommands = new CustomCommands(instance, this);
         this._disabledCommands = new DisabledCommands(instance);
         this._prefixes = new PrefixHandler(instance);
+        //@ts-ignore
         this._validations = [
+            //@ts-ignore
             ...this._validations,
+            //@ts-ignore
             ...this.getValidations(instance.validations?.runtime),
         ];
         this.readFiles();
     }
     async readFiles() {
-        const defaultCommands = getAllFiles(path.join(__dirname, "../../internal/commands"));
-        const files = getAllFiles(this._commandsDir);
+        const defaultCommands = await getAllFiles(path.join(__dirname, "../../internal/commands"));
+        const files = await getAllFiles(this._commandsDir);
         const validations = [
-            ...this.getValidations(path.join(__dirname, "../../validations", "syntax")),
-            ...this.getValidations(this._instance.validations?.syntax),
+            ...(await this.getValidations(path.join(__dirname, "../../validations", "syntax"))),
+            ...(await this.getValidations(this._instance.validations?.syntax)),
         ];
         for (let fileData of [...defaultCommands, ...files]) {
             const { filePath } = fileData;
@@ -119,7 +122,7 @@ export default class CommandHandler {
             user: user,
             channel,
         };
-        for (const validation of this._validations) {
+        for (const validation of await this._validations) {
             if (!(await validation(command, usage, this._prefixes.get(guild?.id)))) {
                 return;
             }
@@ -147,11 +150,11 @@ export default class CommandHandler {
         }
         return await callback(usage);
     }
-    getValidations(folder) {
+    async getValidations(folder) {
         if (!folder) {
             return [];
         }
-        return getAllFiles(folder).map((fileData) => fileData.fileContents);
+        return (await getAllFiles(folder)).map((fileData) => fileData.fileContents);
     }
     get commands() {
         return this._commands;
