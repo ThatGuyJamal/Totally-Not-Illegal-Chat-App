@@ -970,10 +970,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.11.15":
+"@types/node@npm:*":
   version: 18.11.15
   resolution: "@types/node@npm:18.11.15"
   checksum: cae8692a5cee0316f93ee0342237eb921f70c51afb37c661c711a925a4642654ae7e404c5a80899d481c0cfaff3a6891ef04bacd330a2e72734192bfc91dc2d8
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:18.7.18":
+  version: 18.7.18
+  resolution: "@types/node@npm:18.7.18"
+  checksum: 8aec61f0f96e2a69ce51f1f40f949ca578bbb4fe05d7c0b8ce3aeeb848e90f755837f17f6ac132ca404d974fe9b2974150ad3b4984fc9dc7c3ceddb10bae0167
   languageName: node
   linkType: hard
 
@@ -1022,7 +1029,7 @@ __metadata:
   resolution: "abyss-command-handler@workspace:."
   dependencies:
     "@sapphire/prettier-config": ^1.4.4
-    "@types/node": ^18.11.15
+    "@types/node": 18.7.18
     "@types/prettier": ^2
     "@uwu-codes/tsconfig": ^1.0.2
     discord.js: ^14.7.1
