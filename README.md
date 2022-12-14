@@ -1,7 +1,5 @@
 https://github.com/ThatGuyJamal/Abyss-The-Bot
 
-Default prefix for all bots is `a!` using this handler.
-
 ## Todo
 
 Redo built in default commands with more checks.

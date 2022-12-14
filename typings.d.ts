@@ -1,3 +1,4 @@
+// Imported Data from packages
 import {
 	Client,
 	ApplicationCommandOption,
@@ -8,23 +9,38 @@ import {
 	User,
 } from "discord.js";
 
-import CommandType from "./lib/util/CommandType";
-import CooldownTypes from "./lib/util/CooldownTypes";
-import Cooldowns from "./lib/util/Cooldowns";
-import DefaultCommands from "./lib/util/DefaultCommands";
+// Imported Typings
+import {
+	CommandType,
+	CooldownTypes,
+	DefaultCommands,
+} from "./lib/typings/enums";
 
-export default class WOK {
+// Imported Classes
+import CommandHandler from "./lib/classes/cmd/CommandHandler";
+import EventHandler from "./lib/classes/events/EventHandler";
+
+/**
+ * @class
+ * @version 1.0.0
+ * @description The main class for Abyss Command Handler.
+ */
+export default class AbyssCommandHandler {
 	private _client!: Client;
 	private _testServers!: string[];
-	private _botOwners!: string[];
-	private _cooldowns: Cooldowns | undefined;
+	public _botOwners!: string[];
+	public _defaultPrefix!: string;
+	public _cooldowns: Cooldowns | undefined;
 	private _disabledDefaultCommands!: DefaultCommands[];
 	private _validations!: Validations;
-	private _commandHandler: CommandHandler | undefined;
-	private _eventHandler!: EventHandler;
+	public _commandHandler: CommandHandler | undefined;
+	public _eventHandler!: EventHandler;
 	private _isConnectedToDB = false;
 
-	constructor(options: Options);
+	/**
+	 * @param options The options for the client.
+	 */
+	constructor(options: ClientOptions);
 
 	public get client(): Client;
 	public get testServers(): string[];
@@ -37,13 +53,14 @@ export default class WOK {
 	public get isConnectedToDB(): boolean;
 }
 
-export interface Options {
+export interface ClientOptions {
 	client: Client;
 	mongoUri?: string;
 	commandsDir?: string;
 	featuresDir?: string;
 	testServers?: string[];
 	botOwners?: string[];
+	defaultPrefix?: string;
 	cooldownConfig?: CooldownConfig;
 	disabledDefaultCommands?: DefaultCommands[];
 	events?: Events;
@@ -67,7 +84,32 @@ export interface Validations {
 }
 
 export class Cooldowns {
-	constructor(instance: WOK, oldownConfig: CooldownConfig) {}
+	constructor(instance: AbyssCommandHandler, cooldownConfig: CooldownConfig) {}
+	/**
+	 * Searches through the database and looks for all active cooldowns.
+	 * @returns {boolean} Whether the cooldown was set or not
+	 */
+	private async loadCooldowns(): Promise<void>;
+	public getKeyFromCooldownUsage(cooldownUsage: CooldownUsage): string;
+	public async cancelCooldown(
+		cooldownUsage: InternalCooldownConfig
+	): Promise<void>;
+	public async updateCooldown(
+		cooldownUsage: InternalCooldownConfig,
+		expires: Date
+	): Promise<void>;
+	public verifyCooldown(duration: string): number;
+	public getKey(
+		cooldownType: CooldownTypes,
+		userId: string,
+		actionId: string,
+		guildId?: string
+	): string;
+	public canBypass(userId: string): boolean;
+	public start(cooldownUsage: InternalCooldownConfig): Promise<void>;
+	public canRunAction(
+		cooldownUsage: InternalCooldownConfig
+	): Promise<boolean | string>;
 }
 
 export interface CooldownUsage {
@@ -87,7 +129,7 @@ export interface InternalCooldownConfig {
 
 export interface CommandUsage {
 	client: Client;
-	instance: WOK;
+	instance: AbyssCommandHandler;
 	message?: Message | null;
 	interaction?: CommandInteraction | null;
 	args: string[];
@@ -128,9 +170,13 @@ export type FileData = {
 };
 
 export class Command {
-	constructor(instance: WOK, commandName: string, commandObject: CommandObject);
+	constructor(
+		instance: AbyssCommandHandler,
+		commandName: string,
+		commandObject: CommandObject
+	);
 
-	public get instance(): WOK;
+	public get instance(): AbyssCommandHandler;
 	public get commandName(): string;
 	public get commandObject(): CommandObject;
 }
