@@ -27,7 +27,7 @@
     "@uwu-codes/tsconfig": "^1.0.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "tsc-watch": "^5.0.3",
+    "tsc-watch": "^6.0.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
