@@ -2,23 +2,23 @@ import { CommandUsage } from "../../../../typings";
 import Command from "../../cmd/Command";
 
 export default async (command: Command, usage: CommandUsage) => {
-	const { commandName, instance } = command;
-	const { guild, message, interaction } = usage;
+  const { commandName, instance } = command;
+  const { guild, message, interaction } = usage;
 
-	if (!guild || !instance.isConnectedToDB) {
-		return true;
-	}
+  if (!guild || !instance.isConnectedToDB) {
+    return true;
+  }
 
-	if (
-		instance.commandHandler.disabledCommands.isDisabled(guild.id, commandName)
-	) {
-		const text = "This command is disabled";
+  if (
+    instance.commandHandler.disabledCommands.isDisabled(guild.id, commandName)
+  ) {
+    const text = "This command is disabled";
 
-		if (message) message.channel.send(text);
-		else if (interaction) interaction.reply(text);
+    if (message) message.channel.send(text);
+    else if (interaction) interaction.reply(text);
 
-		return false;
-	}
+    return false;
+  }
 
-	return true;
+  return true;
 };

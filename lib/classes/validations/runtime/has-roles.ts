@@ -3,43 +3,43 @@ import { CommandUsage } from "../../../../typings";
 import Command from "../../cmd/Command";
 
 export default async (command: Command, usage: CommandUsage) => {
-	const { instance, guild, member, message, interaction } = usage;
+  const { instance, guild, member, message, interaction } = usage;
 
-	if (!member || !instance.isConnectedToDB) {
-		return true;
-	}
+  if (!member || !instance.isConnectedToDB) {
+    return true;
+  }
 
-	const _id = `${guild!.id}-${command.commandName}`;
-	const document = await requiredRoles.findById(_id);
+  const _id = `${guild!.id}-${command.commandName}`;
+  const document = await requiredRoles.findById(_id);
 
-	if (document) {
-		let hasRole = false;
+  if (document) {
+    let hasRole = false;
 
-		for (const roleId of document.roles) {
-			if (member.roles.cache.has(roleId)) {
-				hasRole = true;
-				break;
-			}
-		}
+    for (const roleId of document.roles) {
+      if (member.roles.cache.has(roleId)) {
+        hasRole = true;
+        break;
+      }
+    }
 
-		if (hasRole) {
-			return true;
-		}
+    if (hasRole) {
+      return true;
+    }
 
-		const reply = {
-			content: `You need one of these roles: ${document.roles.map(
-				(roleId: string) => `<@&${roleId}>`
-			)}`,
-			allowedMentions: {
-				roles: [],
-			},
-		};
+    const reply = {
+      content: `You need one of these roles: ${document.roles.map(
+        (roleId: string) => `<@&${roleId}>`
+      )}`,
+      allowedMentions: {
+        roles: [],
+      },
+    };
 
-		if (message) message.reply(reply);
-		else if (interaction) interaction.reply(reply);
+    if (message) message.reply(reply);
+    else if (interaction) interaction.reply(reply);
 
-		return false;
-	}
+    return false;
+  }
 
-	return true;
+  return true;
 };
