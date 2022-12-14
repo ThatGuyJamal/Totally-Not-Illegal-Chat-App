@@ -1,8 +1,12 @@
 import { Client, Interaction, InteractionType, Message } from "discord.js";
 import ACH from "../../main.js";
-import path from "path";
 import getAllFiles from "../../utils/get-all-files.js";
 import { Events } from "../../typings/index.js";
+
+import path from "node:path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default class EventHandler {
   // <eventName, array of [function, dynamic validation functions]>

@@ -3,7 +3,7 @@
 commands:
 		@echo ---------------------------------------------
 		@echo Valid Make commands in this project are:
-		@echo - build (builds the project)
+		@echo - build_project (builds the project)
 		@echo - pre_deploy (cleans the project and preps it for deployment)
 
 		@echo - Use "make <command>" to run a command
@@ -45,6 +45,20 @@ update_all_deps:
 
 		@echo Installing Dev-dependencies...
 		@yarn add -D typescript tsc-watch prettier npm-run-all @uwu-codes/tsconfig @types/node @sapphire/prettier-config
+
+		@echo "Done!"
+		@echo ---------------------------------------------
+
+# Builds the project
+build_project:
+		@echo ---------------------------------------------
+		@echo Starting...
+
+		@rmdir dist /s /q
+		@echo Deleted dist folder...
+
+		@yarn build
+		@echo Built project...
 
 		@echo "Done!"
 		@echo ---------------------------------------------

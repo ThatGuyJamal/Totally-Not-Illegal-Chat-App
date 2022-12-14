@@ -1,6 +1,9 @@
 import { InteractionType } from "discord.js";
-import path from "path";
 import getAllFiles from "../../utils/get-all-files.js";
+import path from "node:path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 export default class EventHandler {
     // <eventName, array of [function, dynamic validation functions]>
     _eventCallbacks = new Map();
