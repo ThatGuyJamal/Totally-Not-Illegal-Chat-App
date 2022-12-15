@@ -14,7 +14,10 @@ import { DefaultCommands, CommandType, } from "../../typings/index.js";
 export default class CommandHandler {
     // <commandName, instance of the Command class>
     _commands = new Collection();
-    _validations = this.getValidations(path.join(__dirname, "../../validations", "runtime"));
+    // private _validations = this.getValidations(
+    //   path.join(__dirname, "../../validations", "runtime")
+    // );
+    _validations = [];
     _instance;
     _client;
     _commandsDir;
@@ -32,14 +35,17 @@ export default class CommandHandler {
         this._customCommands = new CustomCommands(instance, this);
         this._disabledCommands = new DisabledCommands(instance);
         this._prefixes = new PrefixHandler(instance);
-        //@ts-ignore
-        this._validations = [
-            //@ts-ignore
-            ...this._validations,
-            //@ts-ignore
-            ...this.getValidations(instance.validations?.runtime),
-        ];
+        // this._validations = [
+        //   ...this._validations,
+        //   ...this.getValidations(instance.validations?.runtime),
+        // ];
         this.readFiles();
+    }
+    async _v() {
+        this._validations = [
+            ...this._validations,
+            ...(await this.getValidations(this._instance.validations?.runtime)),
+        ];
     }
     async readFiles() {
         const defaultCommands = await getAllFiles(path.join(__dirname, "../../internal/commands"));

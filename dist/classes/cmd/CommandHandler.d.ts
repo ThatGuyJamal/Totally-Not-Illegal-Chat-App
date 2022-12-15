@@ -18,6 +18,7 @@ export default class CommandHandler {
     private _disabledCommands;
     private _prefixes;
     constructor(instance: ACH, commandsDir: string, client: Client);
+    private _v;
     private readFiles;
     runCommand(command: Command, args: string[], message: Message | null, interaction: CommandInteraction | null): Promise<any>;
     private getValidations;
