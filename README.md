@@ -16,19 +16,7 @@ Made this using [dart](https://dart.dev).
 
 ![ExampleTwo](./assets/images/tnica_2.png)
 
-## How to run in development
-
-### Simple Build (easier)
-
-1. Go into the [/bin](./bin) directory.
-
-2. Then download the binary .exe file (windows only) and run the file. It will start the webapp.
-
-3. Go to `http://localhost:8080` in your browser.
-
-This instance will be using my own hosted database and cant be configured since all the code is compiled into the binary. If you want to run your own instance, you will need to build it yourself. Keep it minds its not always safe to run random binaries from the internet, so if your paranoid, you can build it yourself using the instructions below.
-
-### Self Build (harder)
+## How to build locally
 
 1. Make sure you have the dark SDK installed.
 
