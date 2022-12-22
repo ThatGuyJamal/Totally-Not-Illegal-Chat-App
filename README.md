@@ -11,6 +11,7 @@ Made this using [dart](https://dart.dev).
 2. Clone the repo.
 
 3. Rename the `settings.dart.example` file to `settings.dart` and fill in the mongodb connection string.
+*./lib/config/settings.dart.example*
 
 4. Run `dart run ./lib/chat_app.dart` in the root directory.
 

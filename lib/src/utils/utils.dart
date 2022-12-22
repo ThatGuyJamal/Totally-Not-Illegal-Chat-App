@@ -1,10 +1,8 @@
 import 'dart:async';
 
+import 'package:chat_app/src/config/settings.dart';
 import 'package:xid/xid.dart';
 import 'package:alfred/alfred.dart';
-
-// A list of admin commands
-final List<String> adminCommands = ["total-messages-user"];
 
 // Creates a random Id
 Xid generateId() {
@@ -44,4 +42,30 @@ FutureOr errorHandler(HttpRequest req, HttpResponse res) {
 FutureOr missingHandler(HttpRequest req, HttpResponse res) {
   res.statusCode = 404;
   return "This route doesn't exist!";
+}
+
+/// Checks if the app is in development mode
+bool inDevelopmentMode() {
+  LogType config = settings['logLevel'];
+
+  if (config == LogType.debug) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+/// Checks if the string is longer than the allowed characters
+bool isLongerThanAllowedChars(String str, int length) {
+  if (str.length > length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+Stopwatch globalUptimeStopWatch = Stopwatch();
+
+void startUptimeTimer() {
+  globalUptimeStopWatch.start();
 }

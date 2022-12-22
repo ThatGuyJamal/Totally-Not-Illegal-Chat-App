@@ -1,8 +1,0 @@
-// Rename this file settings.dart and fill out the mongodb_url
-
-// A map of our config settings
-Map<String, dynamic> settings = {
-  'mongodb_url': "",
-  'mongodb_db_collection': 'messages',
-  'port': 8080
-};
