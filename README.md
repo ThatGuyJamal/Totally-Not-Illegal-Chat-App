@@ -44,3 +44,13 @@ Thanks for checking this project out! Feel free to message me on discord `ThatGu
 - [ ] Make system reply messages a different color than user messages
 - [ ] admin commands locked by a password/token
 - [ ] Inject html file into the request and not a html file, this way we can compile the dart code into a binary and not have to worry about having the native html file.
+- [ ] User messages will be sent with a userId before the message allowing us to keep track of who sent what message.
+    - Because ws can only send strings we would have to encode the userId and message into a string. Example: 
+    ```dart
+    final id = "some-id-from-the-database";
+    final dataFromWs = "some message from the user";
+    final encodedData = "$id:$dataFromWs";
+    ```
+
+    Then on the client side we would parse this information into a javascript object and use it to display the message inside the html. We could also use this same format to send a timestamp (when the message was created in the db) back to the client.
+- [ ] Message timestamps
