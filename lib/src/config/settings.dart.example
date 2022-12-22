@@ -8,5 +8,6 @@ Map<String, dynamic> settings = {
   'mongodb_db_collection': 'messages',
   'port': 8080,
   'logLevel': LogType.info,
-  'http_ip': 'localhost' // '0.0.0.0' or 'localhost' or a specific IP from your network
+  'http_ip': 'localhost', // '0.0.0.0' or 'localhost' or a specific IP from your network
+   'gh_repo': ""
 };

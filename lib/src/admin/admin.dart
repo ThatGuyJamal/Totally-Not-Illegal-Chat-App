@@ -5,6 +5,7 @@ import 'package:mongo_dart/mongo_dart.dart';
 // ignore: implementation_imports
 import 'package:alfred/src/type_handlers/websocket_type_handler.dart';
 
+import '../config/settings.dart';
 import '../ws.dart';
 
 /// A list of admin commands
@@ -21,9 +22,6 @@ String adminCommandSuffix = '::';
 
 /// Checks if the command is valid before running it.
 bool isValidAdminCommand(String command) {
-  String adminCommandPrefix = 'admin::';
-  String adminCommandSuffix = '::';
-
   // Check if the message data is a command
   if (command.startsWith(adminCommandPrefix)) {
     // Get the command
@@ -71,7 +69,7 @@ void getHelpReply(WebSocket ws) {
 
 /// Get the github repo link
 void getGithubLink(WebSocket ws) {
-  String link = "https://github.com/ThatGuyJamal/Totally-Not-Illegal-Chat-App";
+  String link = settings['gh_repo'];
 
   ws.send(link);
 }
