@@ -71,7 +71,9 @@ void getHelpReply(WebSocket ws) {
 
 /// Get the github repo link
 void getGithubLink(WebSocket ws) {
-  ws.send("");
+  String link = "https://github.com/ThatGuyJamal/Totally-Not-Illegal-Chat-App";
+
+  ws.send(link);
 }
 
 void getUptime(WebSocket ws) {
