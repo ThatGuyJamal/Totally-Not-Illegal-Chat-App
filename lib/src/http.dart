@@ -28,7 +28,8 @@ Future<void> serveHttpServer() async {
 
   await serveWebSocket(app);
 
-  final server = await app.listen(settings['port'] ?? 8080);
+  final server = await app.listen(
+      settings['port'] ?? 8080, settings['http_ip'] ?? 'localhost');
 
   print('Listening at http://${server.address.host}:${server.port}');
 }
