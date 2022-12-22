@@ -5,5 +5,5 @@
 # Conventional directory for build output.
 build/
 
-# Important files to ignore
+# Our settings config file.
 settings.dart
