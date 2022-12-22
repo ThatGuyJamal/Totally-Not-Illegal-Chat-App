@@ -34,4 +34,4 @@ I created this application to help me learn the dart programming language and ex
 
 In the future I would like to make a more robust chat application using the same concepts and ideas. I would most likely use a framework to help handle web-sockets, http requests, and other things. I would also like to add more features such as user accounts, private messages, and more.
 
-Thanks for checking this project out! Feel free to message me on discord @`ThatGuyJamal#2695`.
+Thanks for checking this project out! Feel free to message me on discord `ThatGuyJamal#2695`.

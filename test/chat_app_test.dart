@@ -1,6 +1,7 @@
+import 'package:test/test.dart';
+
 import 'package:chat_app/src/admin/admin.dart';
 import 'package:chat_app/src/utils/utils.dart';
-import 'package:test/test.dart';
 
 void main() {
   test('mixing to strings together', () {
