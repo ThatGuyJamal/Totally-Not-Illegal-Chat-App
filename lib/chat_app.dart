@@ -5,7 +5,7 @@ void main() async {
   startUptimeTimer();
 
   print("=====================================");
-  print("============ App Started ============");
+  print("============= App Online ============");
   print("=====================================");
 
   // Start the http server
