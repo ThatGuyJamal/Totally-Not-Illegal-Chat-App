@@ -25,3 +25,13 @@ Made this using [dart](https://dart.dev).
 - [x] Message history auto-wiped every 10 minutes
 - [x] Random users generated every page refresh
 - [x] Stable and secure
+
+## Disclaimer
+
+This application is not meant for production use. It is a proof of concept and should not be used in any way, shape, or form. I am not responsible for any damages caused by this application. Use at your own risk.
+
+I created this application to help me learn the dart programming language and explore different aspects of the language and its ecosystem. If you see any improvements that can be made, please feel free to open a pull request.
+
+In the future I would like to make a more robust chat application using the same concepts and ideas. I would most likely use a framework to help handle web-sockets, http requests, and other things. I would also like to add more features such as user accounts, private messages, and more.
+
+Thanks for checking this project out! Feel free to message me on discord @`ThatGuyJamal#2695`.
