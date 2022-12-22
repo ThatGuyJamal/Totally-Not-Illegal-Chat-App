@@ -28,7 +28,8 @@ Future<void> serveHttpServer() async {
       .catchError((error) => print("Error connecting to database: $error"));
 
   // Get the collection
-  final messages = db.collection(settings['mongodb_db_collection']!);
+  final messages =
+      db.collection(settings['mongodb_db_collection'] ?? 'messages');
 
   // Path to the html code file
   // https://api.dart.dev/stable/2.18.6/dart-io/Platform/script.html
@@ -124,7 +125,17 @@ Future<void> serveHttpServer() async {
     );
   });
 
-  final server = await app.listen(8080);
+  // Delete all messages from the database after 10 minutes
+  // This is used to prevent the database from getting too big even if a user does not refresh the page (which would deletes the messages)
+  Timer.periodic(Duration(minutes: 10), (timer) async {
+    await messages
+        .deleteMany({}, writeConcern: WriteConcern.acknowledged)
+        .then((value) => print("Did clean database: ${value.isAcknowledged}"))
+        .catchError(
+            (error) => print("Error deleting messages from database: $error"));
+  });
+
+  final server = await app.listen(settings['port'] ?? 8080);
 
   print('Listening at http://${server.address.host}:${server.port}');
 }
