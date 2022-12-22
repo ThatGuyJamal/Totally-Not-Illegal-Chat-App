@@ -1,3 +1,7 @@
+// This stops the for loop of our websocket users from crashing in runtime if lots of data is trying to be
+// accessed at once. Example: Lots of page refreshes, will call the forEach function.
+// But this function only reads data over the iterable, and does not modify it.
+
 // ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'dart:async';
@@ -38,16 +42,16 @@ Future<void> serveWebSocket(Alfred app) async {
   app.get('/ws', (req, res) {
     return WebSocketSession(
       onOpen: (ws) {
-        webSocketUsers.add(ws);
-        for (var user in webSocketUsers.where((user) => user != ws)) {
-          user.send('A new user joined the chat.');
+        for (var ws in webSocketUsers.where((user) => user != ws)) {
+          ws.send('Welcome to the chat!');
         }
+        webSocketUsers.add(ws);
       },
       onClose: (ws) async {
-        webSocketUsers.forEach((user) async {
-          String userId = mixTwoStrings(user.hashCode.toString(), randomUserId);
+        webSocketUsers.forEach((ws) async {
+          String userId = mixTwoStrings(ws.hashCode.toString(), randomUserId);
 
-          user.send('A user has left.');
+          ws.send('A user has left.');
 
           await deleteAllMessagesFromUser(messages, userId);
         });
@@ -55,17 +59,17 @@ Future<void> serveWebSocket(Alfred app) async {
         webSocketUsers.remove(ws);
       },
       onMessage: (ws, dynamic data) async {
-        webSocketUsers.forEach((user) async {
+        webSocketUsers.forEach((ws) async {
           // Check if the length of the data is over 1000 characters
           if (isLongerThanAllowedChars(data, 1000)) {
-            user.send('Your message cant be over 1000 characters!');
+            ws.send('Your message cant be over 1000 characters!');
             return;
           }
 
           // Send the data to the client
-          user.send(data);
+          ws.send(data);
 
-          String id = mixTwoStrings(user.hashCode.toString(), randomUserId);
+          String id = mixTwoStrings(ws.hashCode.toString(), randomUserId);
 
           await createMessageForUser(messages, id, data);
 
@@ -77,7 +81,7 @@ Future<void> serveWebSocket(Alfred app) async {
             String command = getAdminCommand(data);
 
             // Run the commands if they are valid
-            await runCommand(command, messages, id, user);
+            await runCommand(command, messages, id, ws);
           }
         });
       },
