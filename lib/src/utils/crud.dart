@@ -37,11 +37,11 @@ Future<void> createMessageForUser(
           (error) => print("Error inserting message to database: $error"));
 }
 
-/// Cleans the database from old all messages every 10 minutes.
+/// Cleans the database from old all messages every 1 hour.
 /// This is used to prevent the database from getting too big even if a user does not refresh the page
 /// (which would deletes the messages they send on that websocket)
 Future<void> cleanAllMessageHistory(DbCollection messages) async {
-  Timer.periodic(Duration(minutes: 10), (timer) async {
+  Timer.periodic(Duration(hours: 1), (timer) async {
     await messages
         .deleteMany({}, writeConcern: WriteConcern.acknowledged)
         .then((value) => inDevelopmentMode()
