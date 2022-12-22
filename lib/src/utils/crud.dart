@@ -44,7 +44,9 @@ Future<void> cleanAllMessageHistory(DbCollection messages) async {
   Timer.periodic(Duration(minutes: 10), (timer) async {
     await messages
         .deleteMany({}, writeConcern: WriteConcern.acknowledged)
-        .then((value) => print("Did clean database: ${value.isAcknowledged}"))
+        .then((value) => inDevelopmentMode()
+            ? print("Did clean database: ${value.isAcknowledged}")
+            : null)
         .catchError(
             (error) => print("Error deleting messages from database: $error"));
   });
