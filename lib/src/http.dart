@@ -17,7 +17,7 @@ Future<void> serveHttpServer() async {
   // Path to the html code file
   // https://api.dart.dev/stable/2.18.6/dart-io/Platform/script.html
   String htmlFilePath =
-      Platform.script.resolve('./public/chat-client.html').toFilePath();
+      Platform.script.resolve('./static/chat-client.html').toFilePath();
 
   // Deliver web client for chat
   app.get('/', (req, res) => File(htmlFilePath));
