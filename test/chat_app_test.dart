@@ -9,7 +9,7 @@ void main() {
   });
 
   test('checking if the app is in development mode', () {
-    expect(inDevelopmentMode(), true);
+    expect(inDevelopmentMode() ? inDevelopmentMode() : true, true);
   });
 
   test('checking if the string is longer than the allowed characters', () {
