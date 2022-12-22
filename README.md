@@ -20,7 +20,7 @@ Made this using [dart](https://dart.dev).
 
 ### Simple Build (easier)
 
-1. Go into the [/out](./out) directory.
+1. Go into the [/bin](./bin) directory.
 
 2. Then download the binary .exe file (windows only) and run the file. It will start the webapp.
 
