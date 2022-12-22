@@ -55,3 +55,4 @@ Thanks for checking this project out! Feel free to message me on discord `ThatGu
 
 - [ ] Make system reply messages a different color than user messages
 - [ ] admin commands locked by a password/token
+- [ ] Inject html file into the request and not a html file, this way we can compile the dart code into a binary and not have to worry about having the native html file.
