@@ -16,13 +16,15 @@ final app = Alfred(
 Future<void> serveHttpServer() async {
   // Path to the html code file
   // https://api.dart.dev/stable/2.18.6/dart-io/Platform/script.html
-  String htmlFilePath =
+  String chatClientHtmlFile =
       Platform.script.resolve('./static/chat-client.html').toFilePath();
 
-  // Deliver web client for chat
-  app.get('/', (req, res) => File(htmlFilePath));
+  String indexHtmlFile =
+      Platform.script.resolve('./static/index.html').toFilePath();
 
-  app.get('/hello', (req, res) => 'Hello World!');
+  app.get('/', (req, res) => File(indexHtmlFile));
+
+  app.get('/chat', (req, res) => File(chatClientHtmlFile));
 
   // Start websocket server
 

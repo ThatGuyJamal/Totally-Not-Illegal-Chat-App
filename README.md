@@ -54,3 +54,4 @@ Thanks for checking this project out! Feel free to message me on discord `ThatGu
 
     Then on the client side we would parse this information into a javascript object and use it to display the message inside the html. We could also use this same format to send a timestamp (when the message was created in the db) back to the client.
 - [ ] Message timestamps
+- [ ] Add a home page so users are not added to the chat room until they click a button
