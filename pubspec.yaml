@@ -14,5 +14,5 @@ dev_dependencies:
   test: ^1.16.0
 dependencies:
   alfred: ^1.0.0+1
-  mongo_dart: ^0.8.2
+  mongo_dart: ^0.10.0
   xid: ^1.0.12
